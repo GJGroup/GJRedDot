@@ -11,4 +11,19 @@
 - (void)methodTabBar {
   self.tabBarController.tabBar.items[1].isShowRedDot = YES;
 }
+
+//设置偏移量
+- (void)setOffset {
+  self.taBarItem.redDotOffset = CGPointMake(5, 10);
+}
+
+//设置小红点半径
+- (void)setRadius {
+  self.taBarItem.redDotRadius = 10;
+}
+
+//使用自定义view显示在小红点位置
+- (void)setCustomView {
+  self.taBarItem.customView = ....;
+}
 ```
