@@ -20,8 +20,24 @@
     // Do any additional setup after loading the view, typically from a nib.
 }
 
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+
+
+- (IBAction)showButton:(UIButton *)sender {
     self.tabBarItem.isShowRedDot = !self.tabBarItem.isShowRedDot;
+    NSString *btnTitle = self.tabBarItem.isShowRedDot ? @"To Hide" : @"To Show";
+    [sender setTitle:btnTitle forState:UIControlStateNormal];
+}
+
+- (IBAction)changeIcon:(UIButton *)sender {
+    if (self.tabBarItem.customView) {
+        self.tabBarItem.customView = nil;
+    }
+    else {
+        UIImage *image = [UIImage imageNamed:@"icon"];
+        UIImageView *customImageView = [[UIImageView alloc]initWithImage:image];
+        customImageView.frame = CGRectMake(0, 0, 10, 10);
+        self.tabBarItem.customView = customImageView;
+    }
 }
 
 

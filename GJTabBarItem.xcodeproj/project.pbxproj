@@ -15,6 +15,7 @@
 		4224AF871CAD2E7C00C94115 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4224AF861CAD2E7C00C94115 /* Assets.xcassets */; };
 		4224AF8A1CAD2E7C00C94115 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4224AF881CAD2E7C00C94115 /* LaunchScreen.storyboard */; };
 		4224AF931CAD2E8D00C94115 /* UITabBarItem+GJRedDot.m in Sources */ = {isa = PBXBuildFile; fileRef = 4224AF921CAD2E8D00C94115 /* UITabBarItem+GJRedDot.m */; };
+		429AB86E1CAE76B70017937F /* icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 429AB86D1CAE76B70017937F /* icon@3x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		4224AF8B1CAD2E7C00C94115 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4224AF911CAD2E8D00C94115 /* UITabBarItem+GJRedDot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITabBarItem+GJRedDot.h"; sourceTree = "<group>"; };
 		4224AF921CAD2E8D00C94115 /* UITabBarItem+GJRedDot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITabBarItem+GJRedDot.m"; sourceTree = "<group>"; };
+		429AB86D1CAE76B70017937F /* icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@3x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 			children = (
 				4224AF911CAD2E8D00C94115 /* UITabBarItem+GJRedDot.h */,
 				4224AF921CAD2E8D00C94115 /* UITabBarItem+GJRedDot.m */,
+				429AB86D1CAE76B70017937F /* icon@3x.png */,
 				4224AF7A1CAD2E7C00C94115 /* AppDelegate.h */,
 				4224AF7B1CAD2E7C00C94115 /* AppDelegate.m */,
 				4224AF7D1CAD2E7C00C94115 /* FirstViewController.h */,
@@ -148,6 +151,7 @@
 			files = (
 				4224AF8A1CAD2E7C00C94115 /* LaunchScreen.storyboard in Resources */,
 				4224AF871CAD2E7C00C94115 /* Assets.xcassets in Resources */,
+				429AB86E1CAE76B70017937F /* icon@3x.png in Resources */,
 				4224AF851CAD2E7C00C94115 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -312,6 +316,7 @@
 				4224AF901CAD2E7C00C94115 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
