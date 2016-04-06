@@ -32,3 +32,4 @@
   self.taBarItem.customView = ....;
 }
 ```
+<img src="https://github.com/GJGroup/UITabBarItem-GJRedDot/blob/master/demo.gif" width="375">
