@@ -17,17 +17,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="91z-6Q-g2f">
-                                <rect key="frame" x="93" y="80" width="124" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="91z-6Q-g2f">
+                                <rect key="frame" x="200" y="80" width="200" height="30"/>
                                 <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="To Show"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="28Q-Ej-W2B"/>
+                                </constraints>
+                                <state key="normal" title="Show"/>
                                 <connections>
                                     <action selector="showButton:" destination="9pv-A4-QxB" eventType="touchUpInside" id="fzi-wd-RM6"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VFH-Vq-6DY">
-                                <rect key="frame" x="82" y="151" width="146" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ghq-6n-JlP">
+                                <rect key="frame" x="200" y="220" width="200" height="30"/>
                                 <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="ilZ-d2-e3d"/>
+                                </constraints>
+                                <state key="normal" title="Change Radius"/>
+                                <connections>
+                                    <action selector="changeRadius:" destination="9pv-A4-QxB" eventType="touchUpInside" id="eTC-tX-LUz"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bzl-lb-4Ux">
+                                <rect key="frame" x="200" y="290" width="200" height="30"/>
+                                <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="NPk-4j-BNb"/>
+                                </constraints>
+                                <state key="normal" title="Change Color"/>
+                                <connections>
+                                    <action selector="changeColor:" destination="9pv-A4-QxB" eventType="touchUpInside" id="VeI-CU-6YO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VFH-Vq-6DY">
+                                <rect key="frame" x="200" y="150" width="200" height="30"/>
+                                <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="hTV-CP-PYl"/>
+                                </constraints>
                                 <state key="normal" title="Change Red Dot Icon"/>
                                 <connections>
                                     <action selector="changeIcon:" destination="9pv-A4-QxB" eventType="touchUpInside" id="Qbz-4W-cWN"/>
@@ -35,8 +63,18 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="VFH-Vq-6DY" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="2es-Tn-s87"/>
+                            <constraint firstItem="VFH-Vq-6DY" firstAttribute="top" secondItem="91z-6Q-g2f" secondAttribute="bottom" constant="40" id="3P2-dw-QM9"/>
+                            <constraint firstItem="Ghq-6n-JlP" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="8LZ-sS-cLx"/>
+                            <constraint firstItem="Ghq-6n-JlP" firstAttribute="top" secondItem="VFH-Vq-6DY" secondAttribute="bottom" constant="40" id="8z6-w4-cP9"/>
+                            <constraint firstItem="bzl-lb-4Ux" firstAttribute="top" secondItem="Ghq-6n-JlP" secondAttribute="bottom" constant="40" id="FqB-tP-8q7"/>
+                            <constraint firstItem="bzl-lb-4Ux" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="ota-Yz-7hw"/>
+                            <constraint firstItem="91z-6Q-g2f" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="pfY-ft-PPp"/>
+                            <constraint firstItem="91z-6Q-g2f" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="60" id="tZU-L2-NUN"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="First" image="tabBarIcon.png" id="acW-dT-cKf"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
@@ -103,7 +141,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="first" width="30" height="30"/>
         <image name="second" width="30" height="30"/>
+        <image name="tabBarIcon.png" width="23" height="23"/>
     </resources>
 </document>
