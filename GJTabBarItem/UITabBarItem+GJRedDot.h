@@ -15,7 +15,7 @@
 @property (nonatomic, assign) BOOL isShowRedDot;
 
 /**
- *  小红点半径，控制大小，对自定义图标无效
+ *  小红点半径，控制大小，对自定义图标无效，默认为3
  */
 @property (nonatomic, assign) CGFloat redDotRadius;
 

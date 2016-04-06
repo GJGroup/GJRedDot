@@ -10,8 +10,8 @@
 #import "UITabBarItem+GJRedDot.h"
 
 @interface FirstViewController () {
-    CGFloat _radius;
     NSInteger _colorIndex;
+    CGPoint _offset;
 }
 
 @end
@@ -41,14 +41,18 @@
     }
 }
 
-- (IBAction)changeRadius:(UIButton *)sender {
-    if (_radius == 0 ||
-        _radius > 15) {
-        _radius = 2;
-    }
-    
-    self.tabBarItem.redDotRadius = _radius;
-    _radius += 1;
+- (IBAction)changeRadius:(UISlider *)sender {
+    self.tabBarItem.redDotRadius = sender.value;
+}
+
+- (IBAction)changeOffsetX:(UISlider *)sender {
+    _offset.x = sender.value;
+    self.tabBarItem.redDotOffset = _offset;
+}
+
+- (IBAction)changeOffsetY:(UISlider *)sender {
+    _offset.y = sender.value;
+    self.tabBarItem.redDotOffset = _offset;
 }
 
 - (IBAction)changeColor:(id)sender {

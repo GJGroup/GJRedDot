@@ -24,7 +24,7 @@
 
 //设置小红点颜色
 - (void)setColor {
-self.taBarItem.redDotColor = [UIColor redColor];
+  self.taBarItem.redDotColor = [UIColor redColor];
 }
 
 //使用自定义view显示在小红点位置
