@@ -10,12 +10,12 @@
 @interface UITabBarItem (GJRedDot)
 
 /**
- *  是否显示小红点
+ *  是否显示小红点，默认为NO，当有badgeValue的时候，即使YES也是不显示的
  */
 @property (nonatomic, assign) BOOL isShowRedDot;
 
 /**
- *  小红点半径，控制大小
+ *  小红点半径，控制大小，对自定义图标无效
  */
 @property (nonatomic, assign) CGFloat redDotRadius;
 
@@ -32,7 +32,7 @@
 
 /**
  *  好吧，小红点颜色当然是红色的…起名真难……
- *  默认是redColor，也可以自己定义
+ *  默认是redColor，也可以自己定义，对自定义图标无效
  */
 @property (nonatomic, strong) UIColor *redDotColor;
 
