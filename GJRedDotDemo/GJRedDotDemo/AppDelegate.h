@@ -1,8 +1,8 @@
 //
 //  AppDelegate.h
-//  GJTabBarItem
+//  GJRedDotDemo
 //
-//  Created by wangyutao on 16/3/31.
+//  Created by wangyutao on 16/5/19.
 //  Copyright © 2016年 wangyutao. All rights reserved.
 //
 
