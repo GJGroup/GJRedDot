@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "GCRedDotConfig.h"
 
 @interface NSObject (GJRedDotHandler)
 

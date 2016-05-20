@@ -7,9 +7,8 @@
 //
 
 #import "NSObject+GJRedDotHandler.h"
-#import "RedDot.h"
-#import "GCRedDotInfo.h"
-#import "GCRedDotManager.h"
+#import "GJRedDotInfo.h"
+#import "GJRedDotManager.h"
 #import "NSObject+GJDeallocBlockExecutor.h"
 
 @implementation NSObject (GJRedDotHandler)
@@ -22,19 +21,19 @@
   
     if (key.length == 0 || refreshBlock == nil) return;
     
-    GCRedDotInfo *info = [GCRedDotInfo new];
+    GJRedDotInfo *info = [GJRedDotInfo new];
     info.key = key;
     info.refreshBlock = refreshBlock;
     
-    [[GCRedDotManager sharedManager] addRedDotItem:info forKey:key];
+    [[GJRedDotManager sharedManager] addRedDotItem:info forKey:key];
     [self gj_createExecutorWithHandlerBlock:^{
-        [[GCRedDotManager sharedManager] removeRedDotItemForKey:key];
+        [[GJRedDotManager sharedManager] removeRedDotItemForKey:key];
     }];
     
 }
 
 - (void)resetRedDotState:(BOOL)show forKey:(NSString *)key {
-    [[GCRedDotManager sharedManager] resetRedDotState:show forKey:key];
+    [[GJRedDotManager sharedManager] resetRedDotState:show forKey:key];
 }
 
 

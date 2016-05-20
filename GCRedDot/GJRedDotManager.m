@@ -1,27 +1,26 @@
 //
-//  GCRedDotManager.m
+//  GJRedDotManager.m
 //  GoldenCreditease
 //
 //  Created by wangyutao on 16/5/17.
 //  Copyright © 2016年 二亮子. All rights reserved.
 //
 
-#import "GCRedDotManager.h"
-#import "GCRedDotRegister.h"
-#import "RedDot.h"
-#import "GCRedDotInfo.h"
+#import "GJRedDotManager.h"
+#import "GJRedDotModel.h"
+#import "GJRedDotInfo.h"
 
-@interface GCRedDotManager ()
+@interface GJRedDotManager ()
 @property (nonatomic, strong) NSMutableDictionary *redDotDic;
 @end
 
-@implementation GCRedDotManager
+@implementation GJRedDotManager
 
 + (instancetype)sharedManager {
     static dispatch_once_t onceToken;
-    static GCRedDotManager *manager;
+    static GJRedDotManager *manager;
     dispatch_once(&onceToken, ^{
-        manager = [GCRedDotManager new];
+        manager = [GJRedDotManager new];
     });
     return manager;
 }
@@ -30,18 +29,16 @@
     self = [super init];
     if (self) {
         self.redDotDic = [NSMutableDictionary dictionary];
-        [self regist];
     }
     return self;
 }
 
 #pragma mark- regist
 
-- (void)regist {
-    NSArray *registArray = [GCRedDotRegister regist];
-    [self registWithObject:registArray parent:nil];
+- (void)registWithProfile:(NSArray *)profile {
+    [self registWithObject:profile parent:nil];
     
-    [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
+//    [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
 }
 
 - (void)registWithObject:(id)object parent:(id)parent{
@@ -89,7 +86,7 @@
  *  有子节点：则以子节点为准，子节点有一个是show，就show
  */
 
-- (void)addRedDotItem:(GCRedDotInfo *)item forKey:(NSString *)key {
+- (void)addRedDotItem:(GJRedDotInfo *)item forKey:(NSString *)key {
     [self.redDotDic setObject:item forKey:key];
     //add进去后应该自动刷一下当前key的
     [self refreshRedDotForKey:key];
@@ -126,7 +123,7 @@
  *  @return 当前刷新的RedDot model对象
  */
 - (RedDot *)refreshRedDotForKey:(NSString *)key {
-    GCRedDotInfo *info = [self.redDotDic objectForKey:key];
+    GJRedDotInfo *info = [self.redDotDic objectForKey:key];
     if (!info) return nil;
     
     RedDot *model = [RedDot MR_findFirstByAttribute:@"key" withValue:key];

@@ -1,5 +1,5 @@
 //
-//  GCRedDotManager.h
+//  GJRedDotManager.h
 //  GoldenCreditease
 //
 //  Created by wangyutao on 16/5/17.
@@ -8,15 +8,23 @@
 
 #import <Foundation/Foundation.h>
 
-@class GCRedDotInfo;
+@class GJRedDotInfo;
 
-@interface GCRedDotManager : NSObject
+typedef NS_ENUM(NSUInteger, GJRedDotModelType) {
+    GJRedDotModelUserDefault,
+    GJRedDotModelCustom,
+};
+
+@interface GJRedDotManager : NSObject
 
 + (instancetype)sharedManager;
 
-- (void)addRedDotItem:(GCRedDotInfo *)item forKey:(NSString *)key;
+- (void)registWithProfile:(NSArray *)profile;
+
+- (void)addRedDotItem:(GJRedDotInfo *)item forKey:(NSString *)key;
 
 - (void)removeRedDotItemForKey:(NSString *)key;
 
 - (void)resetRedDotState:(BOOL)show forKey:(NSString *)key;
+
 @end
