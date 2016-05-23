@@ -23,27 +23,44 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qf1-Fk-gpD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="478" y="699"/>
+            <point key="canvasLocation" x="86" y="630"/>
         </scene>
-        <!--Item 1-->
-        <scene sceneID="oHy-44-rJu">
+        <!--Item-->
+        <scene sceneID="oRQ-FU-Plc">
             <objects>
-                <viewController id="XVi-Ox-l83" sceneMemberID="viewController">
+                <navigationController id="KVN-sf-tQs" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="7EI-Of-pMW"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Pm9-9b-vU3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="XtD-Ic-ssW" kind="relationship" relationship="rootViewController" id="sfd-S8-gc4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9pw-hx-0Sp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="86" y="38"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="qAj-so-7vI">
+            <objects>
+                <viewController id="9sM-ao-fec" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="W2p-ma-ZY1"/>
-                        <viewControllerLayoutGuide type="bottom" id="Ogm-qO-2gF"/>
+                        <viewControllerLayoutGuide type="top" id="WHI-fm-hlO"/>
+                        <viewControllerLayoutGuide type="bottom" id="6vK-Qh-Cmo"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ne8-oI-zbM">
+                    <view key="view" contentMode="scaleToFill" id="YkK-D2-Y50">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="00O-ch-PZT"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="yUm-cK-Ux3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h9e-R4-STT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="478" y="38"/>
+            <point key="canvasLocation" x="876" y="43"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="ZGY-Nq-5jb">
@@ -56,13 +73,137 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="XVi-Ox-l83" kind="relationship" relationship="viewControllers" id="ZEF-xZ-mTq"/>
-                        <segue destination="f1K-WG-wU6" kind="relationship" relationship="viewControllers" id="Jt8-Jf-wBO"/>
+                        <segue destination="KVN-sf-tQs" kind="relationship" relationship="viewControllers" id="Bgl-79-sdL"/>
+                        <segue destination="f1K-WG-wU6" kind="relationship" relationship="viewControllers" id="b66-gB-MVF"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L5P-xe-Mj4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-342" y="369"/>
         </scene>
+        <!--First-->
+        <scene sceneID="nsP-Hy-Cq7">
+            <objects>
+                <viewController id="XtD-Ic-ssW" customClass="FirstItemViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gCe-Kh-fPO"/>
+                        <viewControllerLayoutGuide type="bottom" id="g00-vM-lim"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Odn-Hn-2kl">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ouc-ek-bLk">
+                                <rect key="frame" x="60" y="84" width="200" height="30"/>
+                                <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="Ic0-gC-Mh0"/>
+                                </constraints>
+                                <state key="normal" title="Show"/>
+                                <connections>
+                                    <action selector="showButton:" destination="XtD-Ic-ssW" eventType="touchUpInside" id="1RF-TW-gvp"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JGc-Ff-8Tj">
+                                <rect key="frame" x="60" y="224" width="200" height="30"/>
+                                <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="b5t-kB-l38"/>
+                                </constraints>
+                                <state key="normal" title="Change Color"/>
+                                <connections>
+                                    <action selector="changeColor:" destination="XtD-Ic-ssW" eventType="touchUpInside" id="Im1-Or-Yg6"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cFz-In-hco">
+                                <rect key="frame" x="60" y="154" width="200" height="30"/>
+                                <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="qaU-fc-PFW"/>
+                                </constraints>
+                                <state key="normal" title="Change Red Dot Icon"/>
+                                <connections>
+                                    <action selector="changeIcon:" destination="XtD-Ic-ssW" eventType="touchUpInside" id="zhc-4t-5lh"/>
+                                </connections>
+                            </button>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="3" minValue="1" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="qAX-Hl-w3T">
+                                <rect key="frame" x="158" y="284" width="124" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="cxx-ol-FuF"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="changeRadius:" destination="XtD-Ic-ssW" eventType="valueChanged" id="xel-hO-qKV"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Change Radius" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y3E-Ef-qWg">
+                                <rect key="frame" x="24" y="289" width="116" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Change OffsetX" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ma-PG-hdz">
+                                <rect key="frame" x="17" y="338" width="123" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-10" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="XqH-ru-NiB">
+                                <rect key="frame" x="158" y="384" width="124" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="6T4-4j-Ra2"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="changeOffsetY:" destination="XtD-Ic-ssW" eventType="valueChanged" id="yhO-oi-yXt"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Change OffsetY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jM4-k0-cX6">
+                                <rect key="frame" x="18" y="389" width="122" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-10" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="WA2-Zg-jhT">
+                                <rect key="frame" x="158" y="334" width="124" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="e2p-3e-CCB"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="changeOffsetX:" destination="XtD-Ic-ssW" eventType="valueChanged" id="jvF-sk-6Cd"/>
+                                </connections>
+                            </slider>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="WA2-Zg-jhT" firstAttribute="top" secondItem="qAX-Hl-w3T" secondAttribute="bottom" constant="20" id="17t-uw-MlD"/>
+                            <constraint firstItem="JGc-Ff-8Tj" firstAttribute="centerX" secondItem="Odn-Hn-2kl" secondAttribute="centerX" id="3Jj-hR-sHf"/>
+                            <constraint firstItem="cFz-In-hco" firstAttribute="centerX" secondItem="Odn-Hn-2kl" secondAttribute="centerX" id="7F1-pS-Eyo"/>
+                            <constraint firstItem="qAX-Hl-w3T" firstAttribute="top" secondItem="JGc-Ff-8Tj" secondAttribute="bottom" constant="30" id="8xN-re-nm7"/>
+                            <constraint firstItem="cFz-In-hco" firstAttribute="top" secondItem="ouc-ek-bLk" secondAttribute="bottom" constant="40" id="Bg8-Us-9hC"/>
+                            <constraint firstItem="XqH-ru-NiB" firstAttribute="trailing" secondItem="JGc-Ff-8Tj" secondAttribute="trailing" constant="20" id="CR3-4E-5Ie"/>
+                            <constraint firstItem="JGc-Ff-8Tj" firstAttribute="top" secondItem="cFz-In-hco" secondAttribute="bottom" constant="40" id="CjH-pY-dS3"/>
+                            <constraint firstItem="ouc-ek-bLk" firstAttribute="top" secondItem="gCe-Kh-fPO" secondAttribute="bottom" constant="20" id="NvE-im-D0r"/>
+                            <constraint firstItem="qAX-Hl-w3T" firstAttribute="centerY" secondItem="Y3E-Ef-qWg" secondAttribute="centerY" id="Om9-Ea-6jS"/>
+                            <constraint firstItem="qAX-Hl-w3T" firstAttribute="leading" secondItem="Y3E-Ef-qWg" secondAttribute="trailing" constant="20" id="WLU-uX-Dze"/>
+                            <constraint firstItem="XqH-ru-NiB" firstAttribute="centerY" secondItem="jM4-k0-cX6" secondAttribute="centerY" id="WRA-aN-cqg"/>
+                            <constraint firstItem="qAX-Hl-w3T" firstAttribute="trailing" secondItem="JGc-Ff-8Tj" secondAttribute="trailing" constant="20" id="af4-f8-Mt0"/>
+                            <constraint firstItem="XqH-ru-NiB" firstAttribute="top" secondItem="WA2-Zg-jhT" secondAttribute="bottom" constant="20" id="alT-3T-HgH"/>
+                            <constraint firstItem="XqH-ru-NiB" firstAttribute="leading" secondItem="jM4-k0-cX6" secondAttribute="trailing" constant="20" id="mUr-BB-D8y"/>
+                            <constraint firstItem="WA2-Zg-jhT" firstAttribute="centerY" secondItem="5Ma-PG-hdz" secondAttribute="centerY" id="tOI-JK-m78"/>
+                            <constraint firstItem="WA2-Zg-jhT" firstAttribute="leading" secondItem="5Ma-PG-hdz" secondAttribute="trailing" constant="20" id="taG-0v-cNM"/>
+                            <constraint firstItem="ouc-ek-bLk" firstAttribute="centerX" secondItem="Odn-Hn-2kl" secondAttribute="centerX" id="yT6-uM-5DJ"/>
+                            <constraint firstItem="WA2-Zg-jhT" firstAttribute="trailing" secondItem="JGc-Ff-8Tj" secondAttribute="trailing" constant="20" id="zMd-et-c0O"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="First" image="tabBarIcon.png" id="FQG-uA-TxY"/>
+                    <navigationItem key="navigationItem" id="6vL-kS-yWT"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ogw-45-j1C" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="479" y="38"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="tabBarIcon.png" width="23" height="23"/>
+    </resources>
 </document>

@@ -36,7 +36,7 @@ static UIImage* gj_createImage(UIColor *color, CGSize size, CGFloat roundSize) {
 }
 
 #pragma mark - GJTabBarButtonDot
-@interface GJTabBarButtonDot : UIImageView
+@interface GJRedDotView : UIImageView
 
 @property (nonatomic, assign) CGFloat radius;
 
@@ -44,7 +44,7 @@ static UIImage* gj_createImage(UIColor *color, CGSize size, CGFloat roundSize) {
 
 @end
 
-@implementation GJTabBarButtonDot
+@implementation GJRedDotView
 
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
@@ -76,7 +76,7 @@ static UIImage* gj_createImage(UIColor *color, CGSize size, CGFloat roundSize) {
 
 @interface UITabBarItem ()
 
-@property (nonatomic, readonly) GJTabBarButtonDot *redDotView;
+@property (nonatomic, readonly) GJRedDotView *redDotView;
 
 @property (nonatomic, readonly) UIView *currentDotView;
 
@@ -102,6 +102,7 @@ static UIImage* gj_createImage(UIColor *color, CGSize size, CGFloat roundSize) {
     [self _refreshHiddenState];
 }
 
+//after set items
 - (void)_updateRedDot {
     if (self.customView && !self.customView.superview) {
         [self.nextResponder addSubview:self.customView];
@@ -136,10 +137,10 @@ static UIImage* gj_createImage(UIColor *color, CGSize size, CGFloat roundSize) {
 }
 
 //dot view
-- (GJTabBarButtonDot *)redDotView {
-    GJTabBarButtonDot *dotView = objc_getAssociatedObject(self, _cmd);
+- (GJRedDotView *)redDotView {
+    GJRedDotView *dotView = objc_getAssociatedObject(self, _cmd);
     if (!dotView) {
-        dotView = [[GJTabBarButtonDot alloc] initWithFrame:CGRectMake(0, GJDefaultOffsetY, GJDefaultRedius * 2, GJDefaultRedius * 2)];
+        dotView = [[GJRedDotView alloc] initWithFrame:CGRectMake(0, GJDefaultOffsetY, GJDefaultRedius * 2, GJDefaultRedius * 2)];
         dotView.hidden = YES;
         objc_setAssociatedObject(self, _cmd, dotView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }
