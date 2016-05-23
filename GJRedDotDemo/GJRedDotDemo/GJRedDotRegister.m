@@ -8,22 +8,26 @@
 
 #import "GJRedDotRegister.h"
 
-NSString *const GJGroupKey = @"AllGays";
+NSString *const GJTabBar2 = @"GJTabBar2";
 
-NSString *const GJSunnyxxKey = @"SunnyxxIsGay";
-NSString *const GJUncleBirdKey = @"UncleBird";
-NSString *const GJSardKey = @"SarkIsGay";
+NSString *const GJGroupKey = @"GJAllGays";
+
+NSString *const GJSunnyxxKey = @"GJSunnyxxIsGay";
+NSString *const GJUncleBirdKey = @"GJUncleBird";
+NSString *const GJSardKey = @"GJSarkIsGay";
 
 @implementation GJRedDotRegister
 
 + (NSArray *)registProfiles {
     return @[
-             @{GJGroupKey:@[
-                       GJSunnyxxKey,
-                       GJUncleBirdKey,
-                       GJSardKey
-                       ]
-                 }
+             
+             @{GJTabBar2:@{GJGroupKey:@[
+                                   GJSunnyxxKey,
+                                   GJUncleBirdKey,
+                                   GJSardKey
+                                   ]
+                           }
+               }
              ];
 }
 

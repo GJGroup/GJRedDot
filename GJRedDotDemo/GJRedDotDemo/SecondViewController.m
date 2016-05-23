@@ -22,6 +22,11 @@
     [super viewDidLoad];
     
     __weak typeof(self) weakSelf = self;
+    
+    [self setRedDotKey:GJTabBar2 refreshBlock:^(BOOL show) {
+        weakSelf.navigationController.tabBarItem.isShowRedDot = show;
+    } handler:self];
+    
     [self setRedDotKey:GJGroupKey refreshBlock:^(BOOL show) {
         weakSelf.gjGroupButton.showRedDot = show;
     } handler:self];

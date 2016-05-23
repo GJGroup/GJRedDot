@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+extern NSString *const GJTabBar2;
+
 extern NSString *const GJGroupKey;
 
 extern NSString *const GJSunnyxxKey;

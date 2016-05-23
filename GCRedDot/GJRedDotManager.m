@@ -55,7 +55,7 @@
     [self registWithProfile:profile];
 }
 
-- (void)registWithObject:(id)object parent:(id)parent{
+- (void)registWithObject:(id)object parent:(id<GJRedDotModelProtocol>)parent{
     
     if ([object isKindOfClass:[NSArray class]]) {
         for (id subObject in object) {
@@ -82,7 +82,7 @@
 
 //regist
 - (id<GJRedDotModelProtocol>)fetchOrCreateModelWithKey:(NSString *)key
-                                                parent:(id)parent {
+                                                parent:(id<GJRedDotModelProtocol>)parent {
     //custom
     if (self.modelType == GJRedDotModelCustom &&
         [self _checkRedDotProtocolByObject:self.modelExecutor]) {
@@ -92,6 +92,7 @@
         NSAssert([self _checkRedDotModelProtocolByObject:model], @"You can't implement GJRedDotModelProtocol!");
         if (parent && model.parent == nil) {
             model.parent = parent;
+            [parent.subDots addObject:model];
         }
         return model;
     }
@@ -104,6 +105,7 @@
     model.show = @(![show isEqualToString:@"hide"]);
     if (parent && model.parent == nil) {
         model.parent = parent;
+        [parent.subDots addObject:model];
     }
     return model;
 }

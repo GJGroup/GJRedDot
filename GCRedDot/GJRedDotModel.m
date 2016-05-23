@@ -10,4 +10,14 @@
 
 @implementation GJRedDotModel
 
+- (NSMutableArray<id<GJRedDotModelProtocol>> *)subDots {
+    if (!_subDots) {
+        _subDots = [NSMutableArray arrayWithCapacity:0];
+    }
+    return _subDots;
+}
+
+- (NSString *)description {
+    return [NSString stringWithFormat:@"key:%@ show:%@ parentKey:%@ subCount:%@",self.key,self.show,self.parent.key,@(self.subDots.count)];
+}
 @end

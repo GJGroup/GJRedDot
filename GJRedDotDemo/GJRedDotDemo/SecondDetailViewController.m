@@ -35,6 +35,24 @@
     } handler:self];
 }
 
+- (IBAction)beGay:(id)sender {
+    UIButton *gay = (UIButton *)sender;
+    NSString *key;
+    switch (gay.tag) {
+        case 100:
+            key = GJSunnyxxKey;
+            break;
+        case 101:
+            key = GJUncleBirdKey;
+            break;
+        case 102:
+            key = GJSardKey;
+        default:
+            break;
+    }
+    [self resetRedDotState:!gay.showRedDot forKey:key];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

@@ -12,6 +12,6 @@
 @interface GJRedDotModel : NSObject <GJRedDotModelProtocol>
 @property (nonatomic, copy) NSString *key;
 @property (nonatomic, strong) NSNumber *show;
-@property (nonatomic, strong) NSArray<id<GJRedDotModelProtocol>> *subDots;
+@property (nonatomic, strong) NSMutableArray<id<GJRedDotModelProtocol>> *subDots;
 @property (nonatomic, strong) id<GJRedDotModelProtocol> parent;
 @end

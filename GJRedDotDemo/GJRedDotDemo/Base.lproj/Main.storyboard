@@ -98,17 +98,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PFl-43-CuA">
-                                <rect key="frame" x="124" y="137" width="58" height="30"/>
-                                <state key="normal" title="Sunnyxx"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pwq-34-kPg">
-                                <rect key="frame" x="138" y="268" width="31" height="30"/>
-                                <state key="normal" title="Sark"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cHN-2a-qDQ">
+                            <button opaque="NO" tag="101" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cHN-2a-qDQ">
                                 <rect key="frame" x="138" y="201" width="30" height="30"/>
                                 <state key="normal" title="Bird"/>
+                                <connections>
+                                    <action selector="beGay:" destination="9sM-ao-fec" eventType="touchUpInside" id="RqB-JF-eQH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="102" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pwq-34-kPg">
+                                <rect key="frame" x="138" y="268" width="31" height="30"/>
+                                <state key="normal" title="Sark"/>
+                                <connections>
+                                    <action selector="beGay:" destination="9sM-ao-fec" eventType="touchUpInside" id="U3C-ci-3YP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="100" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PFl-43-CuA">
+                                <rect key="frame" x="124" y="137" width="58" height="30"/>
+                                <state key="normal" title="Sunnyxx"/>
+                                <connections>
+                                    <action selector="beGay:" destination="9sM-ao-fec" eventType="touchUpInside" id="L9F-RH-ybV"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
