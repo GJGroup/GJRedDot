@@ -11,7 +11,7 @@
 @implementation GJRedDot
 
 + (void)registWithProfile:(NSArray *)profile {
-    NSAssert(!profile.count, @"GJRedDot: You can't regist an empty profiles");
+    NSAssert(profile.count, @"GJRedDot: You can't regist an empty profiles");
     [[GJRedDotManager sharedManager] registWithProfile:profile];
 }
 

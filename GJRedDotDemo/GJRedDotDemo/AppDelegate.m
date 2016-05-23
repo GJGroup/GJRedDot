@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "GJRedDot.h"
+#import "GJRedDotRegister.h"
 
 @interface AppDelegate ()
 
@@ -16,6 +18,9 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    [GJRedDot registWithProfile:[GJRedDotRegister registProfiles]];
+    
     // Override point for customization after application launch.
     return YES;
 }

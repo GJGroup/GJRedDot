@@ -10,6 +10,9 @@
 		422EA74D1CEF65A000A37F33 /* GJRedDotModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 422EA74C1CEF65A000A37F33 /* GJRedDotModel.m */; };
 		422EA7531CEF681200A37F33 /* GJRedDot.m in Sources */ = {isa = PBXBuildFile; fileRef = 422EA7521CEF681200A37F33 /* GJRedDot.m */; };
 		422EA7571CF2E5CC00A37F33 /* FirstItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 422EA7561CF2E5CC00A37F33 /* FirstItemViewController.m */; };
+		422EA75A1CF3121300A37F33 /* GJRedDotRegister.m in Sources */ = {isa = PBXBuildFile; fileRef = 422EA7591CF3121300A37F33 /* GJRedDotRegister.m */; };
+		422EA75D1CF3141400A37F33 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 422EA75C1CF3141400A37F33 /* SecondViewController.m */; };
+		422EA7601CF3141F00A37F33 /* SecondDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 422EA75F1CF3141F00A37F33 /* SecondDetailViewController.m */; };
 		4292230D1CEE16FC00A897FF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4292230C1CEE16FC00A897FF /* main.m */; };
 		429223101CEE16FC00A897FF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4292230F1CEE16FC00A897FF /* AppDelegate.m */; };
 		429223161CEE16FC00A897FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 429223141CEE16FC00A897FF /* Main.storyboard */; };
@@ -43,6 +46,12 @@
 		422EA7541CEF6A7C00A37F33 /* GJRedDotProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GJRedDotProtocol.h; sourceTree = "<group>"; };
 		422EA7551CF2E5CC00A37F33 /* FirstItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstItemViewController.h; sourceTree = "<group>"; };
 		422EA7561CF2E5CC00A37F33 /* FirstItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstItemViewController.m; sourceTree = "<group>"; };
+		422EA7581CF3121300A37F33 /* GJRedDotRegister.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJRedDotRegister.h; sourceTree = "<group>"; };
+		422EA7591CF3121300A37F33 /* GJRedDotRegister.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJRedDotRegister.m; sourceTree = "<group>"; };
+		422EA75B1CF3141400A37F33 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		422EA75C1CF3141400A37F33 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		422EA75E1CF3141F00A37F33 /* SecondDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondDetailViewController.h; sourceTree = "<group>"; };
+		422EA75F1CF3141F00A37F33 /* SecondDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondDetailViewController.m; sourceTree = "<group>"; };
 		429223081CEE16FC00A897FF /* GJRedDotDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GJRedDotDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4292230C1CEE16FC00A897FF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4292230E1CEE16FC00A897FF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -115,6 +124,12 @@
 				4292230F1CEE16FC00A897FF /* AppDelegate.m */,
 				422EA7551CF2E5CC00A37F33 /* FirstItemViewController.h */,
 				422EA7561CF2E5CC00A37F33 /* FirstItemViewController.m */,
+				422EA75B1CF3141400A37F33 /* SecondViewController.h */,
+				422EA75C1CF3141400A37F33 /* SecondViewController.m */,
+				422EA75E1CF3141F00A37F33 /* SecondDetailViewController.h */,
+				422EA75F1CF3141F00A37F33 /* SecondDetailViewController.m */,
+				422EA7581CF3121300A37F33 /* GJRedDotRegister.h */,
+				422EA7591CF3121300A37F33 /* GJRedDotRegister.m */,
 				429223141CEE16FC00A897FF /* Main.storyboard */,
 				429223171CEE16FC00A897FF /* Assets.xcassets */,
 				429223191CEE16FC00A897FF /* LaunchScreen.storyboard */,
@@ -283,11 +298,14 @@
 				422EA7531CEF681200A37F33 /* GJRedDot.m in Sources */,
 				422EA74D1CEF65A000A37F33 /* GJRedDotModel.m in Sources */,
 				429223931CEEB34600A897FF /* NSObject+GJDeallocBlockExecutor.m in Sources */,
+				422EA75A1CF3121300A37F33 /* GJRedDotRegister.m in Sources */,
 				429223571CEE18F400A897FF /* GJRedDotManager.m in Sources */,
 				429223921CEEB34600A897FF /* GJDeallocBlockExecutor.m in Sources */,
 				429223101CEE16FC00A897FF /* AppDelegate.m in Sources */,
+				422EA75D1CF3141400A37F33 /* SecondViewController.m in Sources */,
 				4292230D1CEE16FC00A897FF /* main.m in Sources */,
 				4292239A1CEEECBE00A897FF /* GJRedDotInfo.m in Sources */,
+				422EA7601CF3141F00A37F33 /* SecondDetailViewController.m in Sources */,
 				4292235A1CEE18F400A897FF /* UITabBarItem+GJRedDot.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

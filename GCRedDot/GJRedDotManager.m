@@ -88,8 +88,8 @@
         [self _checkRedDotProtocolByObject:self.modelExecutor]) {
         self.modelTypeReal = GJRedDotModelCustom;
         id<GJRedDotModelProtocol> model = [self.modelExecutor getCacheModelWithKey:key];
-        NSAssert(!model, @"you must return a model from 'getCacheModelWithKey:' method");
-        NSAssert(![self _checkRedDotModelProtocolByObject:model], @"You can't implement GJRedDotModelProtocol!");
+        NSAssert(model, @"you must return a model from 'getCacheModelWithKey:' method");
+        NSAssert([self _checkRedDotModelProtocolByObject:model], @"You can't implement GJRedDotModelProtocol!");
         if (parent && model.parent == nil) {
             model.parent = parent;
         }
