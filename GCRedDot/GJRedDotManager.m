@@ -9,9 +9,15 @@
 #import "GJRedDotManager.h"
 #import "GJRedDotModel.h"
 #import "GJRedDotInfo.h"
+#import "GJRedDotProtocol.h"
 
+#define __GJUserDefaults [NSUserDefaults standardUserDefaults]
 @interface GJRedDotManager ()
 @property (nonatomic, strong) NSMutableDictionary *redDotDic;
+@property (nonatomic, strong) NSMutableDictionary *redDotModelDic;
+@property (nonatomic, assign) GJRedDotModelType modelType;
+@property (nonatomic, assign) GJRedDotModelType modelTypeReal;
+@property (nonatomic, strong) id<GJRedDotProtocol> modelExecutor;
 @end
 
 @implementation GJRedDotManager
@@ -29,6 +35,7 @@
     self = [super init];
     if (self) {
         self.redDotDic = [NSMutableDictionary dictionary];
+        self.redDotModelDic = [NSMutableDictionary dictionary];
     }
     return self;
 }
@@ -38,7 +45,14 @@
 - (void)registWithProfile:(NSArray *)profile {
     [self registWithObject:profile parent:nil];
     
-//    [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
+}
+
+- (void)registWithProfile:(NSArray *)profile
+                modelType:(GJRedDotModelType)modelType
+           protocolObject:(id<GJRedDotProtocol>)object {
+    self.modelType = modelType;
+    self.modelExecutor = object;
+    [self registWithProfile:profile];
 }
 
 - (void)registWithObject:(id)object parent:(id)parent{
@@ -52,26 +66,42 @@
         for (id key in object) {
             
             id model = [self fetchOrCreateModelWithKey:key parent:parent];
+            [self.redDotModelDic setObject:model forKey:key];
             
             id subObject = object[key];
             [self registWithObject:subObject parent:model];
         }
     }
-    else if ([object isKindOfClass:[NSString class]]) {
+    else if ([object isKindOfClass:[NSString class]]) { //object is key
         
-        [self fetchOrCreateModelWithKey:object parent:parent];
-        
+        id model = [self fetchOrCreateModelWithKey:object parent:parent];
+        [self.redDotModelDic setObject:model forKey:object];
+
     }
 }
 
-- (id)fetchOrCreateModelWithKey:(NSString *)key parent:(id)parent {
-    RedDot *model = [RedDot MR_findFirstByAttribute:@"key" withValue:key];
-    if (model == nil) {
-        model = [RedDot MR_createEntity];
-        model.show = @(YES);
-        model.key = key;
+//regist
+- (id<GJRedDotModelProtocol>)fetchOrCreateModelWithKey:(NSString *)key
+                                                parent:(id)parent {
+    //custom
+    if (self.modelType == GJRedDotModelCustom &&
+        [self _checkRedDotProtocolByObject:self.modelExecutor]) {
+        self.modelTypeReal = GJRedDotModelCustom;
+        id<GJRedDotModelProtocol> model = [self.modelExecutor getCacheModelWithKey:key];
+        NSAssert(!model, @"you must return a model from 'getCacheModelWithKey:' method");
+        NSAssert(![self _checkRedDotModelProtocolByObject:model], @"You can't implement GJRedDotModelProtocol!");
+        if (parent && model.parent == nil) {
+            model.parent = parent;
+        }
+        return model;
     }
-    
+ 
+    //default
+    self.modelTypeReal = GJRedDotModelUserDefault;
+    NSString *show = [__GJUserDefaults stringForKey:key];
+    GJRedDotModel *model = [GJRedDotModel new];
+    model.key = key;
+    model.show = @(![show isEqualToString:@"hide"]);
     if (parent && model.parent == nil) {
         model.parent = parent;
     }
@@ -100,18 +130,28 @@
  *  限定了当前节点“无子节”点才可修改show
  */
 - (void)resetRedDotState:(BOOL)show forKey:(NSString *)key {
-    RedDot *model = [RedDot MR_findFirstByAttribute:@"key" withValue:key];
+    id<GJRedDotModelProtocol> model = self.redDotModelDic[key];
     if (!model) return;
-    if (model.subDots.allObjects.count > 0) return; //有子节点不可手动改，以子节点为准
+    if (model.subDots.count > 0) return; //有子节点不可手动改，以子节点为准
     model.show = @(show);
-    [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
+    
+    
+    if (self.modelTypeReal == GJRedDotModelCustom) {
+        [self.modelExecutor saveModel];
+    }
+    else if (self.modelTypeReal == GJRedDotModelUserDefault) {
+        NSString *showString = show ? @"show" : @"hide";
+        [__GJUserDefaults setObject:showString forKey:key];
+        [__GJUserDefaults synchronize];
+    }
+    
     [self refreshRedDotTreeForKey:key];
 }
 
 //改变某key后，从key这个节点刷新相关的，只能set最底层，所以往上遍历
 - (void)refreshRedDotTreeForKey:(NSString *)key {
     
-    RedDot *model = [self refreshRedDotForKey:key];
+    id<GJRedDotModelProtocol> model = [self refreshRedDotForKey:key];
     
     model = model.parent;
     if (model) {
@@ -122,11 +162,11 @@
 /**
  *  @return 当前刷新的RedDot model对象
  */
-- (RedDot *)refreshRedDotForKey:(NSString *)key {
+- (id<GJRedDotModelProtocol>)refreshRedDotForKey:(NSString *)key {
     GJRedDotInfo *info = [self.redDotDic objectForKey:key];
     if (!info) return nil;
     
-    RedDot *model = [RedDot MR_findFirstByAttribute:@"key" withValue:key];
+    id<GJRedDotModelProtocol> model = self.redDotModelDic[key];
     if (!model) return nil;
     
     BOOL show = [self checkShowWithModel:model];
@@ -136,9 +176,9 @@
 
 
 //检查当前节点是否show，有子节点的以子节点为准，没有子节点的，以show为准
-- (BOOL)checkShowWithModel:(RedDot *)model {
-    if (model.subDots.allObjects.count > 0) {
-        for (RedDot *redDot in model.subDots.allObjects) {
+- (BOOL)checkShowWithModel:(id<GJRedDotModelProtocol>)model {
+    if (model.subDots.count > 0) {
+        for (id<GJRedDotModelProtocol> redDot in model.subDots) {
             BOOL show = [self checkShowWithModel:redDot];
             if (show) {
                 return YES;
@@ -150,4 +190,31 @@
     }
     return NO;
 }
+
+#pragma mark- 
+
+- (BOOL)_checkRedDotProtocolByObject:(id<GJRedDotProtocol>)object {
+    if (object &&
+        [object respondsToSelector:@selector(getCacheModelWithKey:)] &&
+        [object respondsToSelector:@selector(saveModel)]) {
+        return YES;
+    }
+    return NO;
+}
+
+- (BOOL)_checkRedDotModelProtocolByObject:(id<GJRedDotModelProtocol>)object {
+    if ([object respondsToSelector:@selector(show)] &&
+        [object respondsToSelector:@selector(setShow:)] &&
+        [object respondsToSelector:@selector(key)] &&
+        [object respondsToSelector:@selector(setKey:)] &&
+        [object respondsToSelector:@selector(subDots)] &&
+        [object respondsToSelector:@selector(setSubDots:)] &&
+        [object respondsToSelector:@selector(parent)] &&
+        [object respondsToSelector:@selector(setParent:)]
+        ) {
+        return YES;
+    }
+    return NO;
+}
+
 @end

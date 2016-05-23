@@ -12,9 +12,7 @@
 
 @protocol GJRedDotProtocol <NSObject>
 
-- (id<GJRedDotModelProtocol>)findCacheModelWithKey:(NSString *)key;
-
-- (id<GJRedDotModelProtocol>)createModel;
+- (id<GJRedDotModelProtocol>)getCacheModelWithKey:(NSString *)key;
 
 - (void)saveModel;
 

@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @class GJRedDotInfo;
+@protocol GJRedDotProtocol;
 
 typedef NS_ENUM(NSUInteger, GJRedDotModelType) {
     GJRedDotModelUserDefault,
@@ -20,6 +21,10 @@ typedef NS_ENUM(NSUInteger, GJRedDotModelType) {
 + (instancetype)sharedManager;
 
 - (void)registWithProfile:(NSArray *)profile;
+
+- (void)registWithProfile:(NSArray *)profile
+                modelType:(GJRedDotModelType)modelType
+           protocolObject:(id<GJRedDotProtocol>)object;
 
 - (void)addRedDotItem:(GJRedDotInfo *)item forKey:(NSString *)key;
 
