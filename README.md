@@ -57,7 +57,7 @@ NSString *const GJSardKey = @"GJSarkIsGay";
     [self resetRedDotState:NO forKey:GJGroupKey];
 ```
 
-通过系统原生UITabBarItem添加小红点功能
+##通过系统原生UITabBarItem添加小红点功能
 ```objective-c
 //VC中的方法
 - (void)methodVC {
