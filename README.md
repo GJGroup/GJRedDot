@@ -13,8 +13,8 @@
 ```objective-c
 @implementation AppDelegate
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-[GJRedDot registWithProfile:[GJRedDotRegister registProfiles]];
-return YES;
+  [GJRedDot registWithProfile:[GJRedDotRegister registProfiles]];
+  return YES;
 }
 ```
 ```objective-c
@@ -26,16 +26,17 @@ NSString *const GJSardKey = @"GJSarkIsGay";
 
 @implementation GJRedDotRegister
 + (NSArray *)registProfiles {
-return @[
-@{GJTabBar2:@{GJGroupKey:@[
-GJSunnyxxKey,
-GJUncleBirdKey,
-GJSardKey
-]
+    return @[
+             @{GJTabBar2:@{GJGroupKey:@[
+                                   GJSunnyxxKey,
+                                   GJUncleBirdKey,
+                                   GJSardKey
+                                   ]
+                           }
+               }
+             ];
 }
-}
-];
-}
+
 ```
 
 ##Use
@@ -44,16 +45,16 @@ GJSardKey
 //将小红点管理绑定到持有小红点的对象上(handler)，当它release的时候，也自动release小红点的管理
 //block是小红点刷新的动作，当有其他与当前key相关联的小红点状态发生变化或自身发生变化时，并影响到当前小红点状态，则进行刷新动作
 //这里要使用weakSelf避免循环引用
-__weak typeof(self) weakSelf = self;
-[self setRedDotKey:GJGroupKey refreshBlock:^(BOOL show) {
-weakSelf.gjGroupButton.showRedDot = show;
-} handler:self];
+  __weak typeof(self) weakSelf = self;
+  [self setRedDotKey:GJGroupKey refreshBlock:^(BOOL show) {
+    weakSelf.gjGroupButton.showRedDot = show;
+  } handler:self];
 ```
 
 在需要改变小红点状态的地方调用此方法：
 ```objective-c
 //改变小红点状态，他会自动在上一个方法中刷新小红点，以及刷新想关联的小红点状态
-[self resetRedDotState:NO forKey:GJGroupKey];
+  [self resetRedDotState:NO forKey:GJGroupKey];
 ```
 
 通过系统原生UITabBarItem添加小红点功能
@@ -61,32 +62,32 @@ weakSelf.gjGroupButton.showRedDot = show;
 //VC中的方法
 - (void)methodVC {
 //self就是VC
-self.tabBarItem.isShowRedDot = YES;
+  self.tabBarItem.isShowRedDot = YES;
 }
 
 //通过tabBar的items获取item来设置
 - (void)methodTabBar {
-self.tabBarController.tabBar.items[1].isShowRedDot = YES;
+  self.tabBarController.tabBar.items[1].isShowRedDot = YES;
 }
 
 //设置偏移量
 - (void)setOffset {
-self.taBarItem.redDotOffset = CGPointMake(5, 10);
+  self.taBarItem.redDotOffset = CGPointMake(5, 10);
 }
 
 //设置小红点半径
 - (void)setRadius {
-self.taBarItem.redDotRadius = 10;
+  self.taBarItem.redDotRadius = 10;
 }
 
 //设置小红点颜色
 - (void)setColor {
-self.taBarItem.redDotColor = [UIColor redColor];
+  self.taBarItem.redDotColor = [UIColor redColor];
 }
 
 //使用自定义view显示在小红点位置
 - (void)setCustomView {
-self.taBarItem.customView = ....;
+  self.taBarItem.customView = ....;
 }
 ```
 <img src="https://github.com/GJGroup/UITabBarItem-GJRedDot/blob/master/demo.gif" width="375">
