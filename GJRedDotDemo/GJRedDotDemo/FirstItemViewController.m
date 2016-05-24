@@ -27,35 +27,34 @@
 }
 
 - (IBAction)showButton:(UIButton *)sender {
-    self.tabBarItem.isShowRedDot = !self.tabBarItem.isShowRedDot;
-    NSString *btnTitle = self.tabBarItem.isShowRedDot ? @"To Hide" : @"To Show";
+    self.navigationController.tabBarItem.isShowRedDot = !self.navigationController.tabBarItem.isShowRedDot;
+    NSString *btnTitle = self.navigationController.tabBarItem.isShowRedDot ? @"To Hide" : @"To Show";
     [sender setTitle:btnTitle forState:UIControlStateNormal];
 }
 
 - (IBAction)changeIcon:(UIButton *)sender {
-    if (self.tabBarItem.customView) {
-        self.tabBarItem.customView = nil;
+    if (self.navigationController.tabBarItem.customView) {
+        self.navigationController.tabBarItem.customView = nil;
     }
     else {
-        UIImage *image = [UIImage imageNamed:@"icon"];
+        UIImage *image = [UIImage imageNamed:@"customView"];
         UIImageView *customImageView = [[UIImageView alloc]initWithImage:image];
-        customImageView.frame = CGRectMake(0, 0, 10, 10);
-        self.tabBarItem.customView = customImageView;
+        self.navigationController.tabBarItem.customView = customImageView;
     }
 }
 
 - (IBAction)changeRadius:(UISlider *)sender {
-    self.tabBarItem.redDotRadius = sender.value;
+    self.navigationController.tabBarItem.redDotRadius = sender.value;
 }
 
 - (IBAction)changeOffsetX:(UISlider *)sender {
     _offset.x = sender.value;
-    self.tabBarItem.redDotOffset = _offset;
+    self.navigationController.tabBarItem.redDotOffset = _offset;
 }
 
 - (IBAction)changeOffsetY:(UISlider *)sender {
     _offset.y = sender.value;
-    self.tabBarItem.redDotOffset = _offset;
+    self.navigationController.tabBarItem.redDotOffset = _offset;
 }
 
 - (IBAction)changeColor:(id)sender {
@@ -81,7 +80,7 @@
     }
     
     if (color) {
-        self.tabBarItem.redDotColor = color;
+        self.navigationController.tabBarItem.redDotColor = color;
     }
     
     _colorIndex ++;

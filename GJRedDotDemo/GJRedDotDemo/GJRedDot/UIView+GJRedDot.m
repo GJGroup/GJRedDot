@@ -8,29 +8,7 @@
 
 #import "UIView+GJRedDot.h"
 #import <objc/runtime.h>
-
-//create cornerRatius red dot
-static UIImage* gj_createImage(UIColor *color, CGSize size, CGFloat roundSize) {
-    
-    CGRect rect = CGRectMake(0.0f, 0.0f, size.width, size.height);
-    UIGraphicsBeginImageContextWithOptions(rect.size, NO, [UIScreen mainScreen].scale);
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    
-    if (roundSize > 0) {
-        UIBezierPath* roundedRectanglePath = [UIBezierPath bezierPathWithRoundedRect:rect cornerRadius: roundSize];
-        [color setFill];
-        [roundedRectanglePath fill];
-    } else {
-        CGContextSetFillColorWithColor(context, [color CGColor]);
-        CGContextFillRect(context, rect);
-        
-    }
-    
-    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    
-    return image;
-}
+#import "GJRedDotView.h"
 
 @implementation UIView (GJRedDot)
 
@@ -49,8 +27,7 @@ static UIImage* gj_createImage(UIColor *color, CGSize size, CGFloat roundSize) {
 - (UIImageView *)gj_redDotView {
     UIImageView *redDot = objc_getAssociatedObject(self, _cmd);
     if (!redDot) {
-        redDot = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 6, 6)];
-        redDot.image = gj_createImage([UIColor redColor], CGSizeMake(6, 6), 3);
+        redDot = [[GJRedDotView alloc] initWithFrame:CGRectMake(0, 0, 6, 6)];
         [self addSubview:redDot];
         objc_setAssociatedObject(self, _cmd, redDot, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
         redDot.translatesAutoresizingMaskIntoConstraints = NO;

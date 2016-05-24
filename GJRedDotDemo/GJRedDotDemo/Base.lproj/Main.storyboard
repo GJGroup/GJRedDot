@@ -9,7 +9,7 @@
         <scene sceneID="Rcd-gT-fjZ">
             <objects>
                 <navigationController id="vES-xg-hvb" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="UAf-4m-vEM"/>
+                    <tabBarItem key="tabBarItem" title="Item" image="tabIcon" id="UAf-4m-vEM"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="nuc-nh-smb">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -72,7 +72,7 @@
         <scene sceneID="oRQ-FU-Plc">
             <objects>
                 <navigationController id="KVN-sf-tQs" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="7EI-Of-pMW"/>
+                    <tabBarItem key="tabBarItem" title="Item" image="tabIcon" id="7EI-Of-pMW"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Pm9-9b-vU3">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -265,7 +265,7 @@
                             <constraint firstItem="WA2-Zg-jhT" firstAttribute="trailing" secondItem="JGc-Ff-8Tj" secondAttribute="trailing" constant="20" id="zMd-et-c0O"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="First" image="tabBarIcon.png" id="FQG-uA-TxY"/>
+                    <tabBarItem key="tabBarItem" title="First" id="FQG-uA-TxY"/>
                     <navigationItem key="navigationItem" id="6vL-kS-yWT"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                 </viewController>
@@ -275,7 +275,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="tabBarIcon.png" width="23" height="23"/>
+        <image name="tabIcon" width="35" height="35"/>
         <image name="testicon" width="66" height="66"/>
     </resources>
 </document>

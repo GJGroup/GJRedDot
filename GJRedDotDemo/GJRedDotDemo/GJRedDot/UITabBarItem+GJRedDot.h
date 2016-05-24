@@ -21,14 +21,18 @@
 
 /**
  *  小红点位置偏移，(0,0)默认情况下是以tabBarButton中心为基准进行偏移:
- *  x:默认中心偏右10个坐标，以红点原点x坐标为基准，
- *  也就是说红点frame.origin.x距离tabBarButton中心点的横向坐标距离默认是10
+ *  x:默认中心偏右15个坐标，以红点原点x坐标为基准，
+ *  也就是说红点frame.origin.x距离tabBarButton中心点的横向坐标距离默认是12
  *  y:默认中心偏上15个坐标，以红点原点中心点的y坐标为基准，
  *  也就是说红点frame.center.y距离tabBarButton中心点的纵向坐标距离默认是15
  *  通过offset可以在这基础上偏移
  *  这么做的目的是当小红点高度变化的时候，不会向下方单方向延伸，而是向上下同时延伸，当长度变化的时候类似badgeVallue一样向右单方向延伸
  */
 @property (nonatomic, assign) CGPoint redDotOffset;
+
+@property (nonatomic, assign) CGFloat borderWitdh;
+
+@property (nonatomic, strong) UIColor *borderColor;
 
 /**
  *  好吧，小红点颜色当然是红色的…起名真难……
