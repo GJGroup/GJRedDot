@@ -13,8 +13,8 @@
 ```objective-c
 @implementation AppDelegate
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-  [GJRedDot registWithProfile:[GJRedDotRegister registProfiles]];
-  return YES;
+    [GJRedDot registWithProfile:[GJRedDotRegister registProfiles]];
+    return YES;
 }
 ```
 ```objective-c
@@ -54,7 +54,7 @@ NSString *const GJSardKey = @"GJSarkIsGay";
 在需要改变小红点状态的地方调用此方法：
 ```objective-c
 //改变小红点状态，他会自动在上一个方法中刷新小红点，以及刷新想关联的小红点状态
-  [self resetRedDotState:NO forKey:GJGroupKey];
+    [self resetRedDotState:NO forKey:GJGroupKey];
 ```
 
 通过系统原生UITabBarItem添加小红点功能
@@ -62,7 +62,7 @@ NSString *const GJSardKey = @"GJSarkIsGay";
 //VC中的方法
 - (void)methodVC {
 //self就是VC
-  self.tabBarItem.isShowRedDot = YES;
+    self.tabBarItem.isShowRedDot = YES;
 }
 
 //通过tabBar的items获取item来设置
@@ -72,22 +72,22 @@ NSString *const GJSardKey = @"GJSarkIsGay";
 
 //设置偏移量
 - (void)setOffset {
-  self.taBarItem.redDotOffset = CGPointMake(5, 10);
+    self.taBarItem.redDotOffset = CGPointMake(5, 10);
 }
 
 //设置小红点半径
 - (void)setRadius {
-  self.taBarItem.redDotRadius = 10;
+    self.taBarItem.redDotRadius = 10;
 }
 
 //设置小红点颜色
 - (void)setColor {
-  self.taBarItem.redDotColor = [UIColor redColor];
+    self.taBarItem.redDotColor = [UIColor redColor];
 }
 
 //使用自定义view显示在小红点位置
 - (void)setCustomView {
-  self.taBarItem.customView = ....;
+    self.taBarItem.customView = ....;
 }
 ```
 <img src="https://github.com/GJGroup/UITabBarItem-GJRedDot/blob/master/demo.gif" width="375">
