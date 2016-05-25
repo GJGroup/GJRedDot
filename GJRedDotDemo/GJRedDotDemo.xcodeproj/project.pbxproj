@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		422E94C61CF5EA1900475142 /* GJRedDotInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 422E94B61CF5EA1900475142 /* GJRedDotInfo.m */; };
+		422E94C71CF5EA1900475142 /* GJRedDotManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 422E94B81CF5EA1900475142 /* GJRedDotManager.m */; };
+		422E94C81CF5EA1900475142 /* GJRedDotModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 422E94BA1CF5EA1900475142 /* GJRedDotModel.m */; };
+		422E94C91CF5EA1900475142 /* GJRedDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 422E94BF1CF5EA1900475142 /* GJRedDotView.m */; };
+		422E94CA1CF5EA1900475142 /* NSObject+GJRedDotHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 422E94C11CF5EA1900475142 /* NSObject+GJRedDotHandler.m */; };
+		422E94CB1CF5EA1900475142 /* UITabBarItem+GJRedDot.m in Sources */ = {isa = PBXBuildFile; fileRef = 422E94C31CF5EA1900475142 /* UITabBarItem+GJRedDot.m */; };
+		422E94CC1CF5EA1900475142 /* UIView+GJRedDot.m in Sources */ = {isa = PBXBuildFile; fileRef = 422E94C51CF5EA1900475142 /* UIView+GJRedDot.m */; };
 		422EA7571CF2E5CC00A37F33 /* FirstItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 422EA7561CF2E5CC00A37F33 /* FirstItemViewController.m */; };
 		422EA75A1CF3121300A37F33 /* GJRedDotRegister.m in Sources */ = {isa = PBXBuildFile; fileRef = 422EA7591CF3121300A37F33 /* GJRedDotRegister.m */; };
 		422EA75D1CF3141400A37F33 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 422EA75C1CF3141400A37F33 /* SecondViewController.m */; };
@@ -14,13 +21,6 @@
 		422EA7781CF35B0F00A37F33 /* GJDeallocBlockExecutor.m in Sources */ = {isa = PBXBuildFile; fileRef = 422EA7641CF35B0F00A37F33 /* GJDeallocBlockExecutor.m */; };
 		422EA7791CF35B0F00A37F33 /* NSObject+GJDeallocBlockExecutor.m in Sources */ = {isa = PBXBuildFile; fileRef = 422EA7661CF35B0F00A37F33 /* NSObject+GJDeallocBlockExecutor.m */; };
 		422EA77A1CF35B0F00A37F33 /* GJRedDot.m in Sources */ = {isa = PBXBuildFile; fileRef = 422EA7681CF35B0F00A37F33 /* GJRedDot.m */; };
-		422EA77B1CF35B0F00A37F33 /* GJRedDotInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 422EA76A1CF35B0F00A37F33 /* GJRedDotInfo.m */; };
-		422EA77C1CF35B0F00A37F33 /* GJRedDotManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 422EA76C1CF35B0F00A37F33 /* GJRedDotManager.m */; };
-		422EA77D1CF35B0F00A37F33 /* GJRedDotModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 422EA76E1CF35B0F00A37F33 /* GJRedDotModel.m */; };
-		422EA77E1CF35B0F00A37F33 /* NSObject+GJRedDotHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 422EA7721CF35B0F00A37F33 /* NSObject+GJRedDotHandler.m */; };
-		422EA77F1CF35B0F00A37F33 /* UITabBarItem+GJRedDot.m in Sources */ = {isa = PBXBuildFile; fileRef = 422EA7741CF35B0F00A37F33 /* UITabBarItem+GJRedDot.m */; };
-		422EA7801CF35B0F00A37F33 /* UIView+GJRedDot.m in Sources */ = {isa = PBXBuildFile; fileRef = 422EA7761CF35B0F00A37F33 /* UIView+GJRedDot.m */; };
-		422EA7831CF3FB6500A37F33 /* GJRedDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 422EA7821CF3FB6500A37F33 /* GJRedDotView.m */; };
 		4292230D1CEE16FC00A897FF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4292230C1CEE16FC00A897FF /* main.m */; };
 		429223101CEE16FC00A897FF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4292230F1CEE16FC00A897FF /* AppDelegate.m */; };
 		429223161CEE16FC00A897FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 429223141CEE16FC00A897FF /* Main.storyboard */; };
@@ -40,6 +40,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		422E94B51CF5EA1900475142 /* GJRedDotInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJRedDotInfo.h; sourceTree = "<group>"; };
+		422E94B61CF5EA1900475142 /* GJRedDotInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJRedDotInfo.m; sourceTree = "<group>"; };
+		422E94B71CF5EA1900475142 /* GJRedDotManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJRedDotManager.h; sourceTree = "<group>"; };
+		422E94B81CF5EA1900475142 /* GJRedDotManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJRedDotManager.m; sourceTree = "<group>"; };
+		422E94B91CF5EA1900475142 /* GJRedDotModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJRedDotModel.h; sourceTree = "<group>"; };
+		422E94BA1CF5EA1900475142 /* GJRedDotModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJRedDotModel.m; sourceTree = "<group>"; };
+		422E94BB1CF5EA1900475142 /* GJRedDotModelProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJRedDotModelProtocol.h; sourceTree = "<group>"; };
+		422E94BC1CF5EA1900475142 /* GJRedDotProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJRedDotProtocol.h; sourceTree = "<group>"; };
+		422E94BE1CF5EA1900475142 /* GJRedDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJRedDotView.h; sourceTree = "<group>"; };
+		422E94BF1CF5EA1900475142 /* GJRedDotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJRedDotView.m; sourceTree = "<group>"; };
+		422E94C01CF5EA1900475142 /* NSObject+GJRedDotHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+GJRedDotHandler.h"; sourceTree = "<group>"; };
+		422E94C11CF5EA1900475142 /* NSObject+GJRedDotHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+GJRedDotHandler.m"; sourceTree = "<group>"; };
+		422E94C21CF5EA1900475142 /* UITabBarItem+GJRedDot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITabBarItem+GJRedDot.h"; sourceTree = "<group>"; };
+		422E94C31CF5EA1900475142 /* UITabBarItem+GJRedDot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITabBarItem+GJRedDot.m"; sourceTree = "<group>"; };
+		422E94C41CF5EA1900475142 /* UIView+GJRedDot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+GJRedDot.h"; sourceTree = "<group>"; };
+		422E94C51CF5EA1900475142 /* UIView+GJRedDot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+GJRedDot.m"; sourceTree = "<group>"; };
 		422EA7551CF2E5CC00A37F33 /* FirstItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstItemViewController.h; sourceTree = "<group>"; };
 		422EA7561CF2E5CC00A37F33 /* FirstItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstItemViewController.m; sourceTree = "<group>"; };
 		422EA7581CF3121300A37F33 /* GJRedDotRegister.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJRedDotRegister.h; sourceTree = "<group>"; };
@@ -54,22 +70,6 @@
 		422EA7661CF35B0F00A37F33 /* NSObject+GJDeallocBlockExecutor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+GJDeallocBlockExecutor.m"; sourceTree = "<group>"; };
 		422EA7671CF35B0F00A37F33 /* GJRedDot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJRedDot.h; sourceTree = "<group>"; };
 		422EA7681CF35B0F00A37F33 /* GJRedDot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJRedDot.m; sourceTree = "<group>"; };
-		422EA7691CF35B0F00A37F33 /* GJRedDotInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJRedDotInfo.h; sourceTree = "<group>"; };
-		422EA76A1CF35B0F00A37F33 /* GJRedDotInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJRedDotInfo.m; sourceTree = "<group>"; };
-		422EA76B1CF35B0F00A37F33 /* GJRedDotManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJRedDotManager.h; sourceTree = "<group>"; };
-		422EA76C1CF35B0F00A37F33 /* GJRedDotManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJRedDotManager.m; sourceTree = "<group>"; };
-		422EA76D1CF35B0F00A37F33 /* GJRedDotModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJRedDotModel.h; sourceTree = "<group>"; };
-		422EA76E1CF35B0F00A37F33 /* GJRedDotModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJRedDotModel.m; sourceTree = "<group>"; };
-		422EA76F1CF35B0F00A37F33 /* GJRedDotModelProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJRedDotModelProtocol.h; sourceTree = "<group>"; };
-		422EA7701CF35B0F00A37F33 /* GJRedDotProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJRedDotProtocol.h; sourceTree = "<group>"; };
-		422EA7711CF35B0F00A37F33 /* NSObject+GJRedDotHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+GJRedDotHandler.h"; sourceTree = "<group>"; };
-		422EA7721CF35B0F00A37F33 /* NSObject+GJRedDotHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+GJRedDotHandler.m"; sourceTree = "<group>"; };
-		422EA7731CF35B0F00A37F33 /* UITabBarItem+GJRedDot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITabBarItem+GJRedDot.h"; sourceTree = "<group>"; };
-		422EA7741CF35B0F00A37F33 /* UITabBarItem+GJRedDot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITabBarItem+GJRedDot.m"; sourceTree = "<group>"; };
-		422EA7751CF35B0F00A37F33 /* UIView+GJRedDot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+GJRedDot.h"; sourceTree = "<group>"; };
-		422EA7761CF35B0F00A37F33 /* UIView+GJRedDot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+GJRedDot.m"; sourceTree = "<group>"; };
-		422EA7811CF3FB6500A37F33 /* GJRedDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJRedDotView.h; sourceTree = "<group>"; };
-		422EA7821CF3FB6500A37F33 /* GJRedDotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJRedDotView.m; sourceTree = "<group>"; };
 		429223081CEE16FC00A897FF /* GJRedDotDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GJRedDotDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4292230C1CEE16FC00A897FF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4292230E1CEE16FC00A897FF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -101,29 +101,44 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		422E94B41CF5EA1900475142 /* GJRedDotManger */ = {
+			isa = PBXGroup;
+			children = (
+				422E94B51CF5EA1900475142 /* GJRedDotInfo.h */,
+				422E94B61CF5EA1900475142 /* GJRedDotInfo.m */,
+				422E94B71CF5EA1900475142 /* GJRedDotManager.h */,
+				422E94B81CF5EA1900475142 /* GJRedDotManager.m */,
+				422E94B91CF5EA1900475142 /* GJRedDotModel.h */,
+				422E94BA1CF5EA1900475142 /* GJRedDotModel.m */,
+				422E94BB1CF5EA1900475142 /* GJRedDotModelProtocol.h */,
+				422E94BC1CF5EA1900475142 /* GJRedDotProtocol.h */,
+			);
+			path = GJRedDotManger;
+			sourceTree = "<group>";
+		};
+		422E94BD1CF5EA1900475142 /* GJRedDotView */ = {
+			isa = PBXGroup;
+			children = (
+				422E94BE1CF5EA1900475142 /* GJRedDotView.h */,
+				422E94BF1CF5EA1900475142 /* GJRedDotView.m */,
+				422E94C01CF5EA1900475142 /* NSObject+GJRedDotHandler.h */,
+				422E94C11CF5EA1900475142 /* NSObject+GJRedDotHandler.m */,
+				422E94C21CF5EA1900475142 /* UITabBarItem+GJRedDot.h */,
+				422E94C31CF5EA1900475142 /* UITabBarItem+GJRedDot.m */,
+				422E94C41CF5EA1900475142 /* UIView+GJRedDot.h */,
+				422E94C51CF5EA1900475142 /* UIView+GJRedDot.m */,
+			);
+			path = GJRedDotView;
+			sourceTree = "<group>";
+		};
 		422EA7611CF35B0F00A37F33 /* GJRedDot */ = {
 			isa = PBXGroup;
 			children = (
 				422EA7621CF35B0F00A37F33 /* GJDeallocBlockExecutor */,
+				422E94B41CF5EA1900475142 /* GJRedDotManger */,
+				422E94BD1CF5EA1900475142 /* GJRedDotView */,
 				422EA7671CF35B0F00A37F33 /* GJRedDot.h */,
 				422EA7681CF35B0F00A37F33 /* GJRedDot.m */,
-				422EA7711CF35B0F00A37F33 /* NSObject+GJRedDotHandler.h */,
-				422EA7721CF35B0F00A37F33 /* NSObject+GJRedDotHandler.m */,
-				422EA76F1CF35B0F00A37F33 /* GJRedDotModelProtocol.h */,
-				422EA7701CF35B0F00A37F33 /* GJRedDotProtocol.h */,
-				422EA7731CF35B0F00A37F33 /* UITabBarItem+GJRedDot.h */,
-				422EA7741CF35B0F00A37F33 /* UITabBarItem+GJRedDot.m */,
-				422EA7751CF35B0F00A37F33 /* UIView+GJRedDot.h */,
-				422EA7761CF35B0F00A37F33 /* UIView+GJRedDot.m */,
-				422EA76B1CF35B0F00A37F33 /* GJRedDotManager.h */,
-				422EA76C1CF35B0F00A37F33 /* GJRedDotManager.m */,
-				422EA7691CF35B0F00A37F33 /* GJRedDotInfo.h */,
-				422EA76A1CF35B0F00A37F33 /* GJRedDotInfo.m */,
-				422EA76D1CF35B0F00A37F33 /* GJRedDotModel.h */,
-				422EA76E1CF35B0F00A37F33 /* GJRedDotModel.m */,
-				422EA7811CF3FB6500A37F33 /* GJRedDotView.h */,
-				422EA7821CF3FB6500A37F33 /* GJRedDotView.m */,
-				422EA7771CF35B0F00A37F33 /* 未命名文件夹 */,
 			);
 			path = GJRedDot;
 			sourceTree = "<group>";
@@ -137,13 +152,6 @@
 				422EA7661CF35B0F00A37F33 /* NSObject+GJDeallocBlockExecutor.m */,
 			);
 			path = GJDeallocBlockExecutor;
-			sourceTree = "<group>";
-		};
-		422EA7771CF35B0F00A37F33 /* 未命名文件夹 */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "未命名文件夹";
 			sourceTree = "<group>";
 		};
 		429222FF1CEE16FC00A897FF = {
@@ -305,20 +313,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				422EA7571CF2E5CC00A37F33 /* FirstItemViewController.m in Sources */,
-				422EA77E1CF35B0F00A37F33 /* NSObject+GJRedDotHandler.m in Sources */,
+				422E94CA1CF5EA1900475142 /* NSObject+GJRedDotHandler.m in Sources */,
 				422EA75A1CF3121300A37F33 /* GJRedDotRegister.m in Sources */,
+				422E94CC1CF5EA1900475142 /* UIView+GJRedDot.m in Sources */,
+				422E94C91CF5EA1900475142 /* GJRedDotView.m in Sources */,
 				422EA7791CF35B0F00A37F33 /* NSObject+GJDeallocBlockExecutor.m in Sources */,
+				422E94CB1CF5EA1900475142 /* UITabBarItem+GJRedDot.m in Sources */,
 				429223101CEE16FC00A897FF /* AppDelegate.m in Sources */,
 				422EA77A1CF35B0F00A37F33 /* GJRedDot.m in Sources */,
-				422EA7801CF35B0F00A37F33 /* UIView+GJRedDot.m in Sources */,
-				422EA7831CF3FB6500A37F33 /* GJRedDotView.m in Sources */,
 				422EA75D1CF3141400A37F33 /* SecondViewController.m in Sources */,
-				422EA77D1CF35B0F00A37F33 /* GJRedDotModel.m in Sources */,
+				422E94C81CF5EA1900475142 /* GJRedDotModel.m in Sources */,
 				4292230D1CEE16FC00A897FF /* main.m in Sources */,
-				422EA77F1CF35B0F00A37F33 /* UITabBarItem+GJRedDot.m in Sources */,
 				422EA7781CF35B0F00A37F33 /* GJDeallocBlockExecutor.m in Sources */,
-				422EA77C1CF35B0F00A37F33 /* GJRedDotManager.m in Sources */,
-				422EA77B1CF35B0F00A37F33 /* GJRedDotInfo.m in Sources */,
+				422E94C71CF5EA1900475142 /* GJRedDotManager.m in Sources */,
+				422E94C61CF5EA1900475142 /* GJRedDotInfo.m in Sources */,
 				422EA7601CF3141F00A37F33 /* SecondDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
