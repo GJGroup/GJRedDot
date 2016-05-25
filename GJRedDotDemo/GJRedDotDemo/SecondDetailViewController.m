@@ -30,7 +30,7 @@
     [self setRedDotKey:GJUncleBirdKey refreshBlock:^(BOOL show) {
         weakSelf.birdButton.showRedDot = show;
     } handler:self];
-    [self setRedDotKey:GJSardKey refreshBlock:^(BOOL show) {
+    [self setRedDotKey:GJSarkKey refreshBlock:^(BOOL show) {
         weakSelf.sarkGayButton.showRedDot = show;
     } handler:self];
 }
@@ -46,7 +46,7 @@
             key = GJUncleBirdKey;
             break;
         case 102:
-            key = GJSardKey;
+            key = GJSarkKey;
         default:
             break;
     }

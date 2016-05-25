@@ -14,7 +14,7 @@ NSString *const GJGroupKey = @"GJAllGays";
 
 NSString *const GJSunnyxxKey = @"GJSunnyxxIsGay";
 NSString *const GJUncleBirdKey = @"GJUncleBird";
-NSString *const GJSardKey = @"GJSarkIsGay";
+NSString *const GJSarkKey = @"GJSarkIsGay";
 
 @implementation GJRedDotRegister
 
@@ -24,7 +24,7 @@ NSString *const GJSardKey = @"GJSarkIsGay";
              @{GJTabBar2:@{GJGroupKey:@[
                                    GJSunnyxxKey,
                                    GJUncleBirdKey,
-                                   GJSardKey
+                                   GJSarkKey
                                    ]
                            }
                }

@@ -14,7 +14,7 @@ extern NSString *const GJGroupKey;
 
 extern NSString *const GJSunnyxxKey;
 extern NSString *const GJUncleBirdKey;
-extern NSString *const GJSardKey;
+extern NSString *const GJSarkKey;
 
 @interface GJRedDotRegister : NSObject
 
