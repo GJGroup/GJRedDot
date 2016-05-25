@@ -1,6 +1,7 @@
 #GJRedDot
-这是一个小红点的解决方案，你可以方便的使用它去管理你的小红点
-（目前是Beta版，我们会不断完善，包括小红点UI接口等等）
+这是一个小红点的解决方案，你可以方便的使用它去管理你的小红点提示；
+我们的项目中，有很多小红点联动的需求，例如上一级页面的小红点受下一级页面小红点的影响，常见的需求如微信的“发现——朋友圈”，我们将它进行封装，可以方便的进行使用。
+如有bug或者建议，请提issue或PR，感谢支持
 
 ##Start
 将GJRedDot文件夹拷贝到工程中，在使用的地方导入头文件
@@ -42,18 +43,18 @@ NSString *const GJSardKey = @"GJSarkIsGay";
 ##Use
 在需要使用小红点的地方调用如下方法
 ```objective-c
-//将小红点管理绑定到持有小红点的对象上(handler)，当它release的时候，也自动release小红点的管理
-//block是小红点刷新的动作，当有其他与当前key相关联的小红点状态发生变化或自身发生变化时，并影响到当前小红点状态，则进行刷新动作
-//这里要使用weakSelf避免循环引用
-  __weak typeof(self) weakSelf = self;
-  [self setRedDotKey:GJGroupKey refreshBlock:^(BOOL show) {
-    weakSelf.gjGroupButton.showRedDot = show;
-  } handler:self];
+    //将小红点管理绑定到持有小红点的对象上(handler)，当它release的时候，也自动release小红点的管理
+    //block是小红点刷新的动作，当有其他与当前key相关联的小红点状态发生变化或自身发生变化时，并影响到当前小红点状态，则进行刷新动作
+    //这里要使用weakSelf避免循环引用
+    __weak typeof(self) weakSelf = self;
+    [self setRedDotKey:GJGroupKey refreshBlock:^(BOOL show) {
+        weakSelf.gjGroupButton.showRedDot = show;
+    } handler:self];
 ```
 
 在需要改变小红点状态的地方调用此方法：
 ```objective-c
-//改变小红点状态，他会自动在上一个方法中刷新小红点，以及刷新想关联的小红点状态
+    //改变小红点状态，他会自动在上一个方法中刷新小红点，以及刷新想关联的小红点状态
     [self resetRedDotState:NO forKey:GJGroupKey];
 ```
 
@@ -67,7 +68,7 @@ NSString *const GJSardKey = @"GJSarkIsGay";
 
 //通过tabBar的items获取item来设置
 - (void)methodTabBar {
-  self.tabBarController.tabBar.items[1].isShowRedDot = YES;
+    self.tabBarController.tabBar.items[1].isShowRedDot = YES;
 }
 
 //设置偏移量
