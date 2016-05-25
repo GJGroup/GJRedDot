@@ -21,7 +21,14 @@
 //只是颜色
 @property (nonatomic, strong) UIColor *redDotColor;
 
-//
-@property (nonatomic, strong) UIView *customView;
+/**
+ *  红点的边线宽度，默认0
+ */
+@property (nonatomic, assign) CGFloat redDotBorderWitdh;
+
+/**
+ *  小红点边线颜色，默认白色
+ */
+@property (nonatomic, strong) UIColor *redDotBorderColor;
 
 @end

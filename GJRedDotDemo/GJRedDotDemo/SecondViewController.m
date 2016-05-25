@@ -30,7 +30,15 @@
     [self setRedDotKey:GJGroupKey refreshBlock:^(BOOL show) {
         weakSelf.gjGroupButton.showRedDot = show;
     } handler:self];
-    // Do any additional setup after loading the view.
+
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    self.gjGroupButton.redDotRadius = 10;
+    self.gjGroupButton.redDotOffset = CGPointMake(10, 10);
+    self.gjGroupButton.redDotColor = [UIColor blueColor];
+    self.gjGroupButton.redDotBorderWitdh = 2;
+    self.gjGroupButton.redDotBorderColor = [UIColor redColor];
 }
 
 - (void)didReceiveMemoryWarning {

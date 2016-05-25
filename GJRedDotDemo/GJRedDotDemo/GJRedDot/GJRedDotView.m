@@ -46,9 +46,11 @@ static UIImage* gj_createCircleImage(UIColor *color,
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
+        _borderColor = [UIColor whiteColor];
         self.radius = GJDefaultRedius;
         self.color = [UIColor redColor];
         self.contentMode = UIViewContentModeCenter;
+   
     }
     return self;
 }

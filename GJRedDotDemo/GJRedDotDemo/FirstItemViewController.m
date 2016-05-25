@@ -23,6 +23,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationController.tabBarItem.isShowRedDot = YES;
+    self.navigationController.tabBarItem.redDotBorderColor = [UIColor blueColor];
     // Do any additional setup after loading the view.
 }
 
@@ -87,6 +88,10 @@
     if (_colorIndex == 5) {
         _colorIndex = 0;
     }
+}
+
+- (IBAction)changeBorderWidth:(UISlider *)sender {
+    self.navigationController.tabBarItem.redDotBorderWitdh = sender.value;
 }
 
 - (void)didReceiveMemoryWarning {

@@ -13,12 +13,6 @@ static const CGFloat GJDefaultRedius = 3;
 static const CGFloat GJDefaultOffsetX = 12;
 static const CGFloat GJDefaultOffsetY = -15;
 
-#pragma mark- GJRedDotView interface extension
-@interface GJRedDotView ()
-@property (nonatomic, weak) NSLayoutConstraint *layoutCenterX;
-@property (nonatomic, weak) NSLayoutConstraint *layoutCenterY;
-@end
-
 #pragma mark - UITabBarItem Category
 
 @interface UITabBarItem ()
@@ -128,6 +122,23 @@ static const CGFloat GJDefaultOffsetY = -15;
 
     [self _refreshHiddenState];
     [self _refreshDotViewPosition];
+}
+
+//border
+- (UIColor *)redDotBorderColor {
+    return self.redDotView.borderColor;
+}
+
+- (void)setRedDotBorderColor:(UIColor *)redDotBorderColor {
+    self.redDotView.borderColor = redDotBorderColor;
+}
+
+- (CGFloat)redDotBorderWitdh {
+    return self.redDotView.borderWidth;
+}
+
+- (void)setRedDotBorderWitdh:(CGFloat)redDotBorderWitdh {
+    self.redDotView.borderWidth = redDotBorderWitdh;
 }
 
 #pragma mark- private

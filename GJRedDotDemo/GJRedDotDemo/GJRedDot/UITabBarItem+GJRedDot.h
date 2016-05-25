@@ -30,9 +30,15 @@
  */
 @property (nonatomic, assign) CGPoint redDotOffset;
 
-@property (nonatomic, assign) CGFloat borderWitdh;
+/**
+ *  红点的边线宽度，默认0
+ */
+@property (nonatomic, assign) CGFloat redDotBorderWitdh;
 
-@property (nonatomic, strong) UIColor *borderColor;
+/**
+ *  小红点边线颜色，默认白色
+ */
+@property (nonatomic, strong) UIColor *redDotBorderColor;
 
 /**
  *  好吧，小红点颜色当然是红色的…起名真难……
