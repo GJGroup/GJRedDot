@@ -14,6 +14,6 @@
 
 - (id<GJRedDotModelProtocol>)getCacheModelWithKey:(NSString *)key;
 
-- (void)saveModel;
+- (void)saveModelWithKey:(NSString *)key;
 
 @end

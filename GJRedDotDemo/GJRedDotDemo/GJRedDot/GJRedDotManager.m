@@ -139,7 +139,7 @@
     
     
     if (self.modelTypeReal == GJRedDotModelCustom) {
-        [self.modelExecutor saveModel];
+        [self.modelExecutor saveModelWithKey:key];
     }
     else if (self.modelTypeReal == GJRedDotModelUserDefault) {
         NSString *showString = show ? @"show" : @"hide";
@@ -198,7 +198,7 @@
 - (BOOL)_checkRedDotProtocolByObject:(id<GJRedDotProtocol>)object {
     if (object &&
         [object respondsToSelector:@selector(getCacheModelWithKey:)] &&
-        [object respondsToSelector:@selector(saveModel)]) {
+        [object respondsToSelector:@selector(saveModelWithKey:)]) {
         return YES;
     }
     return NO;
