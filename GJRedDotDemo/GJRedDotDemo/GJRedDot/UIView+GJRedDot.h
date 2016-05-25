@@ -10,15 +10,24 @@
 
 @interface UIView (GJRedDot)
 
+/**
+ *  是否显示小红点
+ */
 @property (nonatomic, assign) BOOL showRedDot;
 
-//影响宽高位置
+/**
+ *  小红点半径
+ */
 @property (nonatomic, assign) CGFloat redDotRadius;
 
-//位置
+/**
+ *  小红点偏移量
+ */
 @property (nonatomic, assign) CGPoint redDotOffset;
 
-//只是颜色
+/**
+ *  小红点颜色
+ */
 @property (nonatomic, strong) UIColor *redDotColor;
 
 /**

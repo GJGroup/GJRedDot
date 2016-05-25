@@ -20,16 +20,31 @@ typedef NS_ENUM(NSUInteger, GJRedDotModelType) {
 
 + (instancetype)sharedManager;
 
+/**
+ *  regist.
+ */
 - (void)registWithProfile:(NSArray *)profile;
 
+/**
+ *  custom regist.
+ */
 - (void)registWithProfile:(NSArray *)profile
                 modelType:(GJRedDotModelType)modelType
            protocolObject:(id<GJRedDotProtocol>)object;
 
+/**
+ *  add item to manager, it contains red dot action and key.
+ */
 - (void)addRedDotItem:(GJRedDotInfo *)item forKey:(NSString *)key;
 
+/**
+ *  remove item from manager, when red dot view released.
+ */
 - (void)removeRedDotItemForKey:(NSString *)key;
 
+/**
+ *  reset red dot state.
+ */
 - (void)resetRedDotState:(BOOL)show forKey:(NSString *)key;
 
 @end
