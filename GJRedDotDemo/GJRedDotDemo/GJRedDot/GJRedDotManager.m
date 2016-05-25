@@ -117,7 +117,6 @@
  *  没有子节点：则以show为准
  *  有子节点：则以子节点为准，子节点有一个是show，就show
  */
-
 - (void)addRedDotItem:(GJRedDotInfo *)item forKey:(NSString *)key {
     [self.redDotDic setObject:item forKey:key];
     //add进去后应该自动刷一下当前key的
@@ -150,7 +149,9 @@
     [self refreshRedDotTreeForKey:key];
 }
 
-//改变某key后，从key这个节点刷新相关的，只能set最底层，所以往上遍历
+/**
+ *  改变某key后，从key这个节点刷新相关的，因为限定了只能set最底层，所以往上遍历
+ */
 - (void)refreshRedDotTreeForKey:(NSString *)key {
     
     id<GJRedDotModelProtocol> model = [self refreshRedDotForKey:key];
@@ -177,7 +178,13 @@
 }
 
 
-//检查当前节点是否show，有子节点的以子节点为准，没有子节点的，以show为准
+/**
+ *  检查当前节点是否show，有子节点的以子节点为准，没有子节点的，以show为准
+ *
+ *  @param model 当前节点model
+ *
+ *  @return show or hide
+ */
 - (BOOL)checkShowWithModel:(id<GJRedDotModelProtocol>)model {
     if (model.subDots.count > 0) {
         for (id<GJRedDotModelProtocol> redDot in model.subDots) {
