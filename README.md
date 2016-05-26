@@ -25,7 +25,24 @@
 
 这个例子在Demo中：GJTabBar2是第二个tabbar的小红点Key，它与这个tab的rootVC中的icon(GJGroupKey)进行关联，GJGroupKey又与下一级页面的3个按钮（GJSunnyxxKey，GJUncleBirdKey，GJSardKey）进行关联。最后所实现的功能就是，GJSunnyxxKey，GJUncleBirdKey，GJSardKey三个按钮中有一个按钮有小红点，则GJGroupKey，GJTabBar2上也会显示小红点，如果三个按钮中小红点都消失，则GJGroupKey，GJTabBar2上的小红点才会消失。
 
+看着不太明白是吧？下面用伪代码解释一下：
+```objective-c
+- (BOOL)showGJTabBar2 {
+    if (GJGroupKey.isShow) return YES;
+    return NO
+}
+
+- (BOOL)showGJGroupKey {
+    if(!GJSunnyxxKey.isShow && !GJUncleBirdKey.isShow && !GJSardKey.isShow) return NO;
+    return YES;
+}
+```
+是不是清晰点了？
+
+
 注意：默认注册方法下，是使用GJRedDotModelUserDefault，将使用Key缓存到NSUserDefault中，所以请保证小红点的Key与程序中其他地方的Key区分开，以防出现问题。
+
+Demo注册代码：
 ```objective-c
 NSString *const GJTabBar2 = @"GJTabBar2";
 NSString *const GJGroupKey = @"GJAllGays";
