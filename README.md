@@ -27,12 +27,12 @@
 
 看着不太明白是吧？下面用伪代码解释一下：
 ```objective-c
-- (BOOL)showGJTabBar2 {
+- (BOOL)isShowGJTabBar2 {
     if (GJGroupKey.isShow) return YES;
     return NO
 }
 
-- (BOOL)showGJGroupKey {
+- (BOOL)isShowGJGroupKey {
     if(!GJSunnyxxKey.isShow && !GJUncleBirdKey.isShow && !GJSardKey.isShow) return NO;
     return YES;
 }
