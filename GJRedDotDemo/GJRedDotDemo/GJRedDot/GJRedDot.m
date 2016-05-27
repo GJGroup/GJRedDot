@@ -23,7 +23,9 @@
         [self registWithProfile:profile];
         return;
     }
-    
-    
+    [[GJRedDotManager sharedManager] registWithProfile:profile
+                                             modelType:modelType
+                                        protocolObject:object];
 }
+
 @end
