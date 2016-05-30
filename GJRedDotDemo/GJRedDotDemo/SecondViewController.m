@@ -10,7 +10,9 @@
 #import "GJRedDot.h"
 #import "GJRedDotRegister.h"
 
-@interface SecondViewController ()
+@interface SecondViewController () {
+    NSInteger _index;
+}
 
 @property (nonatomic, weak) IBOutlet UIButton *gjGroupButton;
 
@@ -39,6 +41,9 @@
     self.gjGroupButton.redDotColor = [UIColor blueColor];
     self.gjGroupButton.redDotBorderWitdh = 2;
     self.gjGroupButton.redDotBorderColor = [UIColor redColor];
+//    self.gjGroupButton.badgeValue = [NSString stringWithFormat:@"%@",@(_index)];
+    _index += 10;
+    
 }
 
 - (void)didReceiveMemoryWarning {

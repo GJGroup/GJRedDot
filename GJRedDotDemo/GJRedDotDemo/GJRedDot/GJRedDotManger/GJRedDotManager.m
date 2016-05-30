@@ -136,7 +136,6 @@
     if (model.subDots.count > 0) return; //有子节点不可手动改，以子节点为准
     model.show = @(show);
     
-    
     if (self.modelTypeReal == GJRedDotModelCustom) {
         [self.modelExecutor saveModelWithKey:key];
     }

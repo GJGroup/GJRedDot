@@ -40,4 +40,9 @@
  */
 @property (nonatomic, strong) UIColor *redDotBorderColor;
 
+/**
+ *  显示badge, badge优先于小红点
+ */
+@property (nonatomic, copy) NSString *badgeValue;
+
 @end

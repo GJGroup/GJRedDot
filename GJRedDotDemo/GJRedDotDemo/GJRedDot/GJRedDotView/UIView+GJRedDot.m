@@ -22,6 +22,7 @@ static const CGFloat GJDefaultOffsetY = -15;
 
 @interface UIView ()
 @property (nonatomic, strong) GJRedDotView *redDotView;
+@property (nonatomic, strong) GJBadgeView *badgeView;
 @end
 
 @implementation UIView (GJRedDot)
@@ -33,7 +34,7 @@ static const CGFloat GJDefaultOffsetY = -15;
 - (void)setShowRedDot:(BOOL)showRedDot {
     if (self.showRedDot != showRedDot) {
         objc_setAssociatedObject(self, @selector(showRedDot), @(showRedDot), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-        self.redDotView.hidden = !showRedDot;
+        [self _refreshHiddenState];
     }
 }
 
@@ -42,6 +43,10 @@ static const CGFloat GJDefaultOffsetY = -15;
     if (!dotView) {
         dotView = [[GJRedDotView alloc] init];
         dotView.hidden = YES;
+        __weak typeof(self) weakSelf = self;
+        dotView.refreshBlock = ^(GJRedDotView *view) {
+            [weakSelf refreshRedDotView:view];
+        };
         objc_setAssociatedObject(self, _cmd, dotView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
         [self addSubview:dotView];
         [self _layoutDotView:dotView];
@@ -49,26 +54,35 @@ static const CGFloat GJDefaultOffsetY = -15;
     return dotView;
 }
 
-- (CGPoint)redDotOffset {
-    NSValue *offset = objc_getAssociatedObject(self, _cmd);
-    if (!offset) {
-        return CGPointZero;
+- (GJBadgeView *)badgeView {
+    GJBadgeView *badgeView = objc_getAssociatedObject(self, _cmd);
+    if (!badgeView) {
+        badgeView = [[GJBadgeView alloc] init];
+        badgeView.hidden = YES;
+  
+        objc_setAssociatedObject(self, _cmd, badgeView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        [self addSubview:badgeView];
+        [self _layoutBadgeView:badgeView];
     }
-    return [offset CGPointValue];
+    return badgeView;
+}
+
+//offset
+- (CGPoint)redDotOffset {
+    return self.redDotView.offset;
 }
 
 - (void)setRedDotOffset:(CGPoint)redDotOffset {
-    objc_setAssociatedObject(self, @selector(redDotOffset),[NSValue valueWithCGPoint:redDotOffset], OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    [self _refreshLayout];
+    self.redDotView.offset = redDotOffset;
 }
 
+//radius
 - (CGFloat)redDotRadius {
     return self.redDotView.radius;
 }
 
 - (void)setRedDotRadius:(CGFloat)redDotRadius {
     self.redDotView.radius = redDotRadius;
-    [self _refreshLayout];
 }
 
 //color
@@ -95,6 +109,23 @@ static const CGFloat GJDefaultOffsetY = -15;
 
 - (void)setRedDotBorderWitdh:(CGFloat)redDotBorderWitdh {
     self.redDotView.borderWidth = redDotBorderWitdh;
+}
+
+//badge
+- (NSString *)badgeValue {
+    return self.badgeView.badgeValue;
+}
+
+- (void)setBadgeValue:(NSString *)badgeValue {
+    if ([self.badgeView.badgeValue isEqualToString:badgeValue]) return;
+    self.badgeView.badgeValue = badgeValue;
+    self.badgeView.hidden = !badgeValue;
+    [self _refreshHiddenState];
+}
+
+//pravite
+- (void)_refreshHiddenState {
+    self.redDotView.hidden = (!self.showRedDot || self.badgeValue);
 }
 
 - (void)_layoutDotView:(GJRedDotView *)dotView {
@@ -124,10 +155,34 @@ static const CGFloat GJDefaultOffsetY = -15;
 }
 
 - (void)_refreshLayout {
-    CGFloat x = GJDefaultOffsetX + self.redDotOffset.x + self.redDotView.radius;
+    CGFloat x = GJDefaultOffsetX + self.redDotOffset.x + self.redDotRadius;
     CGFloat y = GJDefaultOffsetY - self.redDotOffset.y;
     self.redDotView.layoutCenterX.constant = x;
     self.redDotView.layoutCenterY.constant = y;
+}
+
+- (void)refreshRedDotView:(GJRedDotView *)view {
+    [self _refreshLayout];
+}
+
+- (void)_layoutBadgeView:(GJBadgeView *)bageview {
+    bageview.translatesAutoresizingMaskIntoConstraints = NO;
+    NSLayoutConstraint *layoutX = [NSLayoutConstraint constraintWithItem:bageview
+                                                               attribute:NSLayoutAttributeLeft
+                                                               relatedBy:NSLayoutRelationEqual
+                                                                  toItem:self
+                                                               attribute:NSLayoutAttributeRight
+                                                              multiplier:1
+                                                                constant:-8];
+    NSLayoutConstraint *layoutY = [NSLayoutConstraint constraintWithItem:bageview
+                                                               attribute:NSLayoutAttributeBottom
+                                                               relatedBy:NSLayoutRelationEqual
+                                                                  toItem:self
+                                                               attribute:NSLayoutAttributeTop
+                                                              multiplier:1
+                                                                constant:8];
+    [self addConstraint:layoutX];
+    [self addConstraint:layoutY];
 }
 
 @end

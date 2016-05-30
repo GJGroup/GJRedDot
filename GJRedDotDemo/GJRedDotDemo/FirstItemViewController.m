@@ -44,6 +44,11 @@
     }
 }
 
+- (IBAction)changeBadge:(id)sender {
+    self.navigationController.tabBarItem.badgeValue =
+    self.navigationController.tabBarItem.badgeValue ? nil : @"99";
+}
+
 - (IBAction)changeRadius:(UISlider *)sender {
     self.navigationController.tabBarItem.redDotRadius = sender.value;
 }

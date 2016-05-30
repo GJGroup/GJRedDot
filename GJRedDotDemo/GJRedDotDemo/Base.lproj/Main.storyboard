@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Item-->
@@ -165,10 +166,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ouc-ek-bLk">
-                                <rect key="frame" x="60" y="79" width="200" height="30"/>
+                                <rect key="frame" x="50" y="79" width="100" height="30"/>
                                 <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="Ic0-gC-Mh0"/>
+                                    <constraint firstAttribute="width" constant="100" id="Ic0-gC-Mh0"/>
                                 </constraints>
                                 <state key="normal" title="Show"/>
                                 <connections>
@@ -176,29 +177,35 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JGc-Ff-8Tj">
-                                <rect key="frame" x="60" y="169" width="200" height="30"/>
+                                <rect key="frame" x="50" y="169" width="100" height="30"/>
                                 <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="b5t-kB-l38"/>
+                                    <constraint firstAttribute="width" constant="-60" id="b5t-kB-l38"/>
+                                    <constraint firstAttribute="width" constant="100" id="zFX-YH-VWQ"/>
                                 </constraints>
                                 <state key="normal" title="Change Color"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="b5t-kB-l38"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <action selector="changeColor:" destination="XtD-Ic-ssW" eventType="touchUpInside" id="Im1-Or-Yg6"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cFz-In-hco">
-                                <rect key="frame" x="60" y="124" width="200" height="30"/>
+                                <rect key="frame" x="50" y="124" width="100" height="30"/>
                                 <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="qaU-fc-PFW"/>
+                                    <constraint firstAttribute="width" constant="100" id="qaU-fc-PFW"/>
                                 </constraints>
-                                <state key="normal" title="Change Red Dot Icon"/>
+                                <state key="normal" title="Custom VIew"/>
                                 <connections>
                                     <action selector="changeIcon:" destination="XtD-Ic-ssW" eventType="touchUpInside" id="zhc-4t-5lh"/>
                                 </connections>
                             </button>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="3" minValue="1" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="qAX-Hl-w3T">
-                                <rect key="frame" x="158" y="214" width="124" height="31"/>
+                                <rect key="frame" x="162" y="214" width="124" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="120" id="cxx-ol-FuF"/>
                                 </constraints>
@@ -207,34 +214,25 @@
                                 </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Change Radius" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y3E-Ef-qWg">
-                                <rect key="frame" x="24" y="219" width="116" height="21"/>
+                                <rect key="frame" x="28" y="219" width="116" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Change OffsetX" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ma-PG-hdz">
-                                <rect key="frame" x="17" y="263" width="123" height="21"/>
+                                <rect key="frame" x="21" y="263" width="123" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-10" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="XqH-ru-NiB">
-                                <rect key="frame" x="158" y="304" width="124" height="31"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="120" id="6T4-4j-Ra2"/>
-                                </constraints>
-                                <connections>
-                                    <action selector="changeOffsetY:" destination="XtD-Ic-ssW" eventType="valueChanged" id="yhO-oi-yXt"/>
-                                </connections>
-                            </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Change OffsetY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jM4-k0-cX6">
-                                <rect key="frame" x="18" y="308" width="122" height="21"/>
+                                <rect key="frame" x="22" y="308" width="122" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-10" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="WA2-Zg-jhT">
-                                <rect key="frame" x="158" y="259" width="124" height="31"/>
+                                <rect key="frame" x="162" y="259" width="124" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="120" id="e2p-3e-CCB"/>
                                 </constraints>
@@ -243,7 +241,7 @@
                                 </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="2" translatesAutoresizingMaskIntoConstraints="NO" id="e58-nz-Z7J">
-                                <rect key="frame" x="158" y="349" width="124" height="31"/>
+                                <rect key="frame" x="162" y="349" width="124" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="120" id="XtR-G4-rVc"/>
                                 </constraints>
@@ -252,37 +250,79 @@
                                 </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Border Width" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iaj-vp-hf0">
-                                <rect key="frame" x="38" y="353" width="102" height="21"/>
+                                <rect key="frame" x="42" y="353" width="102" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-10" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="XqH-ru-NiB">
+                                <rect key="frame" x="162" y="304" width="124" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="6T4-4j-Ra2"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="changeOffsetY:" destination="XtD-Ic-ssW" eventType="valueChanged" id="yhO-oi-yXt"/>
+                                </connections>
+                            </slider>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gli-jd-faH">
+                                <rect key="frame" x="170" y="79" width="100" height="30"/>
+                                <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="NFV-MH-PIO"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="PgN-cx-xk1"/>
+                                    <constraint firstAttribute="width" constant="-60" id="neP-r5-nQW"/>
+                                    <constraint firstAttribute="height" constant="30" id="wRM-NW-Nnn"/>
+                                </constraints>
+                                <state key="normal" title="ChangeBadge"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="neP-r5-nQW"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="changeBadge:" destination="XtD-Ic-ssW" eventType="touchUpInside" id="ksa-HG-lsT"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="WA2-Zg-jhT" firstAttribute="top" secondItem="qAX-Hl-w3T" secondAttribute="bottom" constant="15" id="17t-uw-MlD"/>
-                            <constraint firstItem="JGc-Ff-8Tj" firstAttribute="centerX" secondItem="Odn-Hn-2kl" secondAttribute="centerX" id="3Jj-hR-sHf"/>
-                            <constraint firstItem="cFz-In-hco" firstAttribute="centerX" secondItem="Odn-Hn-2kl" secondAttribute="centerX" id="7F1-pS-Eyo"/>
+                            <constraint firstItem="JGc-Ff-8Tj" firstAttribute="centerX" secondItem="Odn-Hn-2kl" secondAttribute="centerX" constant="-60" id="3Jj-hR-sHf"/>
+                            <constraint firstItem="cFz-In-hco" firstAttribute="centerX" secondItem="Odn-Hn-2kl" secondAttribute="centerX" constant="-60" id="7F1-pS-Eyo"/>
                             <constraint firstItem="qAX-Hl-w3T" firstAttribute="top" secondItem="JGc-Ff-8Tj" secondAttribute="bottom" constant="15" id="8xN-re-nm7"/>
                             <constraint firstItem="cFz-In-hco" firstAttribute="top" secondItem="ouc-ek-bLk" secondAttribute="bottom" constant="15" id="Bg8-Us-9hC"/>
                             <constraint firstItem="XqH-ru-NiB" firstAttribute="trailing" secondItem="JGc-Ff-8Tj" secondAttribute="trailing" constant="20" id="CR3-4E-5Ie"/>
                             <constraint firstItem="JGc-Ff-8Tj" firstAttribute="top" secondItem="cFz-In-hco" secondAttribute="bottom" constant="15" id="CjH-pY-dS3"/>
                             <constraint firstItem="e58-nz-Z7J" firstAttribute="leading" secondItem="Iaj-vp-hf0" secondAttribute="trailing" constant="20" id="EqJ-aW-eia"/>
+                            <constraint firstItem="gli-jd-faH" firstAttribute="centerY" secondItem="ouc-ek-bLk" secondAttribute="centerY" id="Id6-0v-Iti"/>
                             <constraint firstItem="e58-nz-Z7J" firstAttribute="trailing" secondItem="XqH-ru-NiB" secondAttribute="trailing" id="Ilr-rQ-r1l"/>
                             <constraint firstItem="e58-nz-Z7J" firstAttribute="centerY" secondItem="Iaj-vp-hf0" secondAttribute="centerY" id="Jdw-yU-mnF"/>
+                            <constraint firstItem="qAX-Hl-w3T" firstAttribute="trailing" secondItem="WA2-Zg-jhT" secondAttribute="trailing" id="Jyo-QF-aVi"/>
                             <constraint firstItem="ouc-ek-bLk" firstAttribute="top" secondItem="gCe-Kh-fPO" secondAttribute="bottom" constant="15" id="NvE-im-D0r"/>
                             <constraint firstItem="qAX-Hl-w3T" firstAttribute="centerY" secondItem="Y3E-Ef-qWg" secondAttribute="centerY" id="Om9-Ea-6jS"/>
+                            <constraint firstItem="gli-jd-faH" firstAttribute="leading" secondItem="ouc-ek-bLk" secondAttribute="trailing" constant="20" id="Q0W-Ly-NWI"/>
                             <constraint firstItem="qAX-Hl-w3T" firstAttribute="leading" secondItem="Y3E-Ef-qWg" secondAttribute="trailing" constant="20" id="WLU-uX-Dze"/>
                             <constraint firstItem="XqH-ru-NiB" firstAttribute="centerY" secondItem="jM4-k0-cX6" secondAttribute="centerY" id="WRA-aN-cqg"/>
+                            <constraint firstItem="e58-nz-Z7J" firstAttribute="trailing" secondItem="XqH-ru-NiB" secondAttribute="trailing" id="YaB-x1-sb3"/>
                             <constraint firstItem="qAX-Hl-w3T" firstAttribute="trailing" secondItem="JGc-Ff-8Tj" secondAttribute="trailing" constant="20" id="af4-f8-Mt0"/>
                             <constraint firstItem="XqH-ru-NiB" firstAttribute="top" secondItem="WA2-Zg-jhT" secondAttribute="bottom" constant="15" id="alT-3T-HgH"/>
                             <constraint firstItem="e58-nz-Z7J" firstAttribute="top" secondItem="XqH-ru-NiB" secondAttribute="bottom" constant="15" id="fCZ-op-Tam"/>
+                            <constraint firstItem="XqH-ru-NiB" firstAttribute="trailing" secondItem="WA2-Zg-jhT" secondAttribute="trailing" id="hvm-tS-SHt"/>
                             <constraint firstItem="XqH-ru-NiB" firstAttribute="leading" secondItem="jM4-k0-cX6" secondAttribute="trailing" constant="20" id="mUr-BB-D8y"/>
                             <constraint firstItem="WA2-Zg-jhT" firstAttribute="centerY" secondItem="5Ma-PG-hdz" secondAttribute="centerY" id="tOI-JK-m78"/>
                             <constraint firstItem="WA2-Zg-jhT" firstAttribute="leading" secondItem="5Ma-PG-hdz" secondAttribute="trailing" constant="20" id="taG-0v-cNM"/>
-                            <constraint firstItem="ouc-ek-bLk" firstAttribute="centerX" secondItem="Odn-Hn-2kl" secondAttribute="centerX" id="yT6-uM-5DJ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="qAX-Hl-w3T" secondAttribute="trailing" constant="20" id="xBH-WC-53l"/>
+                            <constraint firstItem="ouc-ek-bLk" firstAttribute="centerX" secondItem="Odn-Hn-2kl" secondAttribute="centerX" constant="-60" id="yT6-uM-5DJ"/>
                             <constraint firstItem="WA2-Zg-jhT" firstAttribute="trailing" secondItem="JGc-Ff-8Tj" secondAttribute="trailing" constant="20" id="zMd-et-c0O"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="af4-f8-Mt0"/>
+                                <exclude reference="zMd-et-c0O"/>
+                                <exclude reference="CR3-4E-5Ie"/>
+                                <exclude reference="Ilr-rQ-r1l"/>
+                            </mask>
+                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="First" id="FQG-uA-TxY"/>
                     <navigationItem key="navigationItem" id="6vL-kS-yWT"/>

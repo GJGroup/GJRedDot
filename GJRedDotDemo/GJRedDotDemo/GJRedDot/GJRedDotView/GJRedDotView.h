@@ -18,4 +18,15 @@
 
 @property (nonatomic, strong) UIColor *borderColor;
 
+@property (nonatomic, assign) CGPoint offset;
+
+@property (nonatomic, copy) void (^refreshBlock)(GJRedDotView *view);
+
+@end
+
+
+@interface GJBadgeView : UIImageView
+
+@property (nonatomic, copy) NSString *badgeValue;
+
 @end
