@@ -30,7 +30,7 @@
            protocolObject:(id<GJRedDotProtocol>)object;
 
 /**
- *  regist dynamically one by one
+ *  regist dynamically one by one, after registWithProfile:
  */
 + (void)registNodeWithKey:(NSString *)key
                 parentKey:(NSString *)parentKey;

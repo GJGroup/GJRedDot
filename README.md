@@ -56,12 +56,19 @@ NSString *const GJSardKey = @"GJSarkIsGay";
              @{GJTabBar2:@{GJGroupKey:@[
                                    GJSunnyxxKey,
                                    GJUncleBirdKey,
-                                   GJSardKey
+                                   //GJSardKey 这里注释掉是为了后面的单独注册的方法，与在这里注册等效
                                    ]
                            }
                }
              ];
 }
+
+```
+
+你也可以在需要的时候单独动态注册Key，在demo中也有示例
+```objective-c
+
+    [GJRedDot registNodeWithKey:GJSarkKey parentKey:GJGroupKey];
 
 ```
 
