@@ -137,4 +137,5 @@ NSString *const GJSardKey = @"GJSarkIsGay";
     view.badgeValue = @"12345";
 }
 ```
+<img src=https://github.com/GJGroup/GJRedDot/blob/master/screenshots/reddot.png width="375">
 
