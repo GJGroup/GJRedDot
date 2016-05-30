@@ -88,7 +88,7 @@ NSString *const GJSardKey = @"GJSarkIsGay";
 //VC中的方法
 - (void)methodVC {
 //self就是VC
-    self.tabBarItem.isShowRedDot = YES;
+    self.tabBarItem.showRedDot = YES;
 }
 
 //通过tabBar的items获取item来设置
@@ -117,3 +117,24 @@ NSString *const GJSardKey = @"GJSarkIsGay";
 }
 ```
 <img src="https://github.com/GJGroup/UITabBarItem-GJRedDot/blob/master/demo.gif" width="375">
+
+##给以UIView为基类的View添加小红点及badge
+当设置badgeValue后，优先显示badgeValue，当badgeValue为nil后，才会根据showRedDot来显示小红点
+```objective-c
+- (void)setRedDotWithView:(UIView *)view{
+    view.showRedDot = YES;
+    
+    view.redDotRadius = 4.0;
+    
+    view.redDotOffset = CGPointMake(10, 5);
+    
+    view.redDotColor = [UIColor BlueColor];
+    
+    view.redDotBorderWitdh = 1.0;
+    
+    view.redDotBorderColor = [UIColor yellowColor];
+    
+    view.badgeValue = @"12345";
+}
+```
+
