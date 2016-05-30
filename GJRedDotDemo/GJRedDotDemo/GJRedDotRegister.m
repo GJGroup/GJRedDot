@@ -24,7 +24,7 @@ NSString *const GJSarkKey = @"GJSarkIsGay";
              @{GJTabBar2:@{GJGroupKey:@[
                                    GJSunnyxxKey,
                                    GJUncleBirdKey,
-                                   GJSarkKey
+                                   //GJSarkKey
                                    ]
                            }
                }

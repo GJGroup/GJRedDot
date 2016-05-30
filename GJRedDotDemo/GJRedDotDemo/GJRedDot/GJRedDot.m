@@ -29,6 +29,12 @@
                                         protocolObject:object];
 }
 
++ (void)registNodeWithKey:(NSString *)key
+                parentKey:(NSString *)parentKey {
+    [[GJRedDotManager sharedManager] registNodeWithKey:key
+                                             parentKey:parentKey];
+}
+
 + (void)setDefaultRadius:(CGFloat)radius {
     [GJRedDotView setDefaultRadius:radius];
 }

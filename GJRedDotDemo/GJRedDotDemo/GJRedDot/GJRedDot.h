@@ -30,6 +30,12 @@
            protocolObject:(id<GJRedDotProtocol>)object;
 
 /**
+ *  regist dynamically one by one
+ */
++ (void)registNodeWithKey:(NSString *)key
+                parentKey:(NSString *)parentKey;
+
+/**
  *  set default radius of red dot.
  */
 + (void)setDefaultRadius:(CGFloat)radius;

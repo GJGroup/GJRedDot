@@ -33,6 +33,12 @@ typedef NS_ENUM(NSUInteger, GJRedDotModelType) {
            protocolObject:(id<GJRedDotProtocol>)object;
 
 /**
+ *  regist dynamically one by one 
+ */
+- (void)registNodeWithKey:(NSString *)key
+                parentKey:(NSString *)parentKey;
+
+/**
  *  add item to manager, it contains red dot action and key.
  */
 - (void)addRedDotItem:(GJRedDotInfo *)item forKey:(NSString *)key;

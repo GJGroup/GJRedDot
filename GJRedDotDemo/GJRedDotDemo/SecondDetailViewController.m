@@ -23,6 +23,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [GJRedDot registNodeWithKey:GJSarkKey
+                      parentKey:GJGroupKey];
+    
     __weak typeof(self) weakSelf = self;
     [self setRedDotKey:GJSunnyxxKey refreshBlock:^(BOOL show) {
         weakSelf.sunnyxxGayButton.showRedDot = show;

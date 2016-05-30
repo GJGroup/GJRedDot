@@ -55,6 +55,18 @@
     [self registWithProfile:profile];
 }
 
+- (void)registNodeWithKey:(NSString *)key
+                parentKey:(NSString *)parentKey {
+    if (!key || key.length == 0) return;
+    id<GJRedDotModelProtocol> model = self.redDotModelDic[key];
+    if (model) return;
+    
+    id<GJRedDotModelProtocol> parent = self.redDotModelDic[parentKey];
+    model = [self fetchOrCreateModelWithKey:key parent:parent];
+    [self.redDotModelDic setObject:model forKey:key];
+    [self refreshRedDotTreeForKey:key];
+}
+
 - (void)registWithObject:(id)object parent:(id<GJRedDotModelProtocol>)parent{
     
     if ([object isKindOfClass:[NSArray class]]) {
