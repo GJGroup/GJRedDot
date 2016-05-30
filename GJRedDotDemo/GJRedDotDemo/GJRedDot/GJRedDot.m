@@ -7,6 +7,7 @@
 //
 
 #import "GJRedDot.h"
+#import "GJRedDotView.h"
 
 @implementation GJRedDot
 
@@ -26,6 +27,14 @@
     [[GJRedDotManager sharedManager] registWithProfile:profile
                                              modelType:modelType
                                         protocolObject:object];
+}
+
++ (void)setDefaultRadius:(CGFloat)radius {
+    [GJRedDotView setDefaultRadius:radius];
+}
+
++ (void)setDefaultColor:(UIColor *)color {
+    [GJRedDotView setDefaultColor:color];
 }
 
 @end

@@ -11,7 +11,7 @@
 
 static const CGFloat GJDefaultRedius = 3;
 static const CGFloat GJDefaultOffsetX = 12;
-static const CGFloat GJDefaultOffsetY = -15;
+static const CGFloat GJDefaultOffsetY = -16;
 
 #pragma mark - UITabBarItem Category
 
@@ -56,14 +56,14 @@ static const CGFloat GJDefaultOffsetY = -15;
 }
 
 //show
-- (BOOL)isShowRedDot {
+- (BOOL)showRedDot {
     return [objc_getAssociatedObject(self, _cmd) boolValue];
 }
 
-- (void)setIsShowRedDot:(BOOL)isShowRedDot {
-    BOOL show = [self isShowRedDot];
-    if (show != isShowRedDot) {
-        objc_setAssociatedObject(self, @selector(isShowRedDot), @(isShowRedDot), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+- (void)setShowRedDot:(BOOL)showRedDot {
+    BOOL show = [self showRedDot];
+    if (show != showRedDot) {
+        objc_setAssociatedObject(self, @selector(showRedDot), @(showRedDot), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
         [self _refreshHiddenState];
     }
 }
@@ -156,9 +156,9 @@ static const CGFloat GJDefaultOffsetY = -15;
 }
 
 - (void)_refreshHiddenState {
-    self.redDotView.hidden = !(!self.customView && self.isShowRedDot && !self.badgeValue);
+    self.redDotView.hidden = !(!self.customView && self.showRedDot && !self.badgeValue);
     if (self.customView) {
-        self.customView.hidden = !(self.isShowRedDot && !self.badgeValue);
+        self.customView.hidden = !(self.showRedDot && !self.badgeValue);
     }
 }
 

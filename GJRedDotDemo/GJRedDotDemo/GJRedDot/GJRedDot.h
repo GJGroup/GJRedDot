@@ -29,5 +29,15 @@
                 modelType:(GJRedDotModelType)modelType
            protocolObject:(id<GJRedDotProtocol>)object;
 
+/**
+ *  set default radius of red dot.
+ */
++ (void)setDefaultRadius:(CGFloat)radius;
+
+/**
+ *  set default color of red dot.
+ */
++ (void)setDefaultColor:(UIColor *)color;
+
 
 @end

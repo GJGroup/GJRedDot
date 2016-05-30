@@ -22,6 +22,10 @@
 
 @property (nonatomic, copy) void (^refreshBlock)(GJRedDotView *view);
 
++ (void)setDefaultRadius:(CGFloat)radius;
+
++ (void)setDefaultColor:(UIColor *)color;
+
 @end
 
 

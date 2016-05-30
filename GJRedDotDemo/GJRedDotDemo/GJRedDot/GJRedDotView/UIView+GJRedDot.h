@@ -21,7 +21,8 @@
 @property (nonatomic, assign) CGFloat redDotRadius;
 
 /**
- *  小红点偏移量
+ *  小红点偏移量，
+ *  跟tabBarItem有所不同，通常小红点中心是所在view的右上角，所以默认为此
  */
 @property (nonatomic, assign) CGPoint redDotOffset;
 

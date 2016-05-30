@@ -8,7 +8,8 @@
 
 #import "GJRedDotView.h"
 
-static const CGFloat GJDefaultRedius = 3;
+static CGFloat GJDefaultRedius = 4;
+static UIColor *GJDefaultColor;
 
 //create cornerRatius red dot
 static UIImage* gj_createCircleImage(UIColor *color,
@@ -43,12 +44,21 @@ static UIImage* gj_createCircleImage(UIColor *color,
 
 @implementation GJRedDotView
 
++ (void)setDefaultRadius:(CGFloat)radius {
+    GJDefaultRedius = radius;
+}
+
++ (void)setDefaultColor:(UIColor *)color {
+    GJDefaultColor = color;
+}
+
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
         _borderColor = [UIColor whiteColor];
         self.radius = GJDefaultRedius;
-        self.color = [UIColor redColor];
+        self.color = GJDefaultColor ? GJDefaultColor :[UIColor redColor];
+        self.offset = CGPointZero;
         self.contentMode = UIViewContentModeCenter;
     }
     return self;

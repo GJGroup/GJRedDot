@@ -10,7 +10,7 @@
         <scene sceneID="Rcd-gT-fjZ">
             <objects>
                 <navigationController id="vES-xg-hvb" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" image="tabIcon" id="UAf-4m-vEM"/>
+                    <tabBarItem key="tabBarItem" title="Item" id="UAf-4m-vEM"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="nuc-nh-smb">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -37,7 +37,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u58-7P-JTg">
-                                <rect key="frame" x="127" y="207" width="66" height="66"/>
+                                <rect key="frame" x="140" y="220" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="f4k-Ej-eJc"/>
                                 </constraints>
@@ -51,6 +51,20 @@
                                     <segue destination="9sM-ao-fec" kind="show" id="IQq-Jf-G6A"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="badge:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g1J-KA-iep">
+                                <rect key="frame" x="59" y="120" width="54" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eoN-Kg-6D5">
+                                <rect key="frame" x="121" y="116" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="textFieldEditingChanged:" destination="f1K-WG-wU6" eventType="editingChanged" id="TMd-xy-ESO"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -69,11 +83,11 @@
             </objects>
             <point key="canvasLocation" x="474" y="675"/>
         </scene>
-        <!--Item-->
+        <!--Navigation Controller-->
         <scene sceneID="oRQ-FU-Plc">
             <objects>
                 <navigationController id="KVN-sf-tQs" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" image="tabIcon" id="7EI-Of-pMW"/>
+                    <tabBarItem key="tabBarItem" systemItem="favorites" id="7EI-Of-pMW"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Pm9-9b-vU3">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -334,7 +348,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="tabIcon" width="35" height="35"/>
-        <image name="testicon" width="66" height="66"/>
+        <image name="testicon" width="40" height="40"/>
     </resources>
 </document>

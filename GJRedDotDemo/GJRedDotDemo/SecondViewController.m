@@ -11,7 +11,7 @@
 #import "GJRedDotRegister.h"
 
 @interface SecondViewController () {
-    NSInteger _index;
+
 }
 
 @property (nonatomic, weak) IBOutlet UIButton *gjGroupButton;
@@ -22,28 +22,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
     __weak typeof(self) weakSelf = self;
-    
-    [self setRedDotKey:GJTabBar2 refreshBlock:^(BOOL show) {
-        weakSelf.navigationController.tabBarItem.isShowRedDot = show;
-    } handler:self];
-    
+
     [self setRedDotKey:GJGroupKey refreshBlock:^(BOOL show) {
         weakSelf.gjGroupButton.showRedDot = show;
     } handler:self];
 
 }
 
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    self.gjGroupButton.redDotRadius = 10;
-    self.gjGroupButton.redDotOffset = CGPointMake(10, 10);
-    self.gjGroupButton.redDotColor = [UIColor blueColor];
-    self.gjGroupButton.redDotBorderWitdh = 2;
-    self.gjGroupButton.redDotBorderColor = [UIColor redColor];
-//    self.gjGroupButton.badgeValue = [NSString stringWithFormat:@"%@",@(_index)];
-    _index += 10;
-    
+- (IBAction)textFieldEditingChanged:(UITextField *)sender {
+    self.gjGroupButton.badgeValue = sender.text.length ? sender.text : nil;
 }
 
 - (void)didReceiveMemoryWarning {

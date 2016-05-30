@@ -10,9 +10,6 @@
 #import <objc/runtime.h>
 #import "GJRedDotView.h"
 
-static const CGFloat GJDefaultOffsetX = 12;
-static const CGFloat GJDefaultOffsetY = -15;
-
 #pragma mark- GJRedDotView interface extension
 @interface GJRedDotView ()
 @property (nonatomic, weak) NSLayoutConstraint *layoutCenterX;
@@ -131,20 +128,20 @@ static const CGFloat GJDefaultOffsetY = -15;
 - (void)_layoutDotView:(GJRedDotView *)dotView {
     
     dotView.translatesAutoresizingMaskIntoConstraints = NO;
-    CGFloat x = GJDefaultOffsetX + self.redDotOffset.x + dotView.radius;
-    CGFloat y = GJDefaultOffsetY - self.redDotOffset.y;
+    CGFloat x = - dotView.radius + self.redDotOffset.x;
+    CGFloat y = dotView.radius + self.redDotOffset.y;
     NSLayoutConstraint *layoutX = [NSLayoutConstraint constraintWithItem:dotView
-                                                               attribute:NSLayoutAttributeCenterX
+                                                               attribute:NSLayoutAttributeLeft
                                                                relatedBy:NSLayoutRelationEqual
                                                                   toItem:self
-                                                               attribute:NSLayoutAttributeCenterX
+                                                               attribute:NSLayoutAttributeRight
                                                               multiplier:1
                                                                 constant:x];
     NSLayoutConstraint *layoutY = [NSLayoutConstraint constraintWithItem:dotView
-                                                               attribute:NSLayoutAttributeCenterY
+                                                               attribute:NSLayoutAttributeBottom
                                                                relatedBy:NSLayoutRelationEqual
                                                                   toItem:self
-                                                               attribute:NSLayoutAttributeCenterY
+                                                               attribute:NSLayoutAttributeTop
                                                               multiplier:1
                                                                 constant:y];
     dotView.layoutCenterX = layoutX;
@@ -155,8 +152,8 @@ static const CGFloat GJDefaultOffsetY = -15;
 }
 
 - (void)_refreshLayout {
-    CGFloat x = GJDefaultOffsetX + self.redDotOffset.x + self.redDotRadius;
-    CGFloat y = GJDefaultOffsetY - self.redDotOffset.y;
+    CGFloat x = - self.redDotView.radius + self.redDotOffset.x;
+    CGFloat y = self.redDotView.radius + self.redDotOffset.y;
     self.redDotView.layoutCenterX.constant = x;
     self.redDotView.layoutCenterY.constant = y;
 }

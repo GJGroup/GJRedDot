@@ -22,14 +22,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationController.tabBarItem.isShowRedDot = YES;
+    self.navigationController.tabBarItem.showRedDot = YES;
     self.navigationController.tabBarItem.redDotBorderColor = [UIColor blueColor];
     // Do any additional setup after loading the view.
 }
 
 - (IBAction)showButton:(UIButton *)sender {
-    self.navigationController.tabBarItem.isShowRedDot = !self.navigationController.tabBarItem.isShowRedDot;
-    NSString *btnTitle = self.navigationController.tabBarItem.isShowRedDot ? @"To Hide" : @"To Show";
+    self.navigationController.tabBarItem.showRedDot = !self.navigationController.tabBarItem.showRedDot;
+    NSString *btnTitle = self.navigationController.tabBarItem.showRedDot ? @"To Hide" : @"To Show";
     [sender setTitle:btnTitle forState:UIControlStateNormal];
 }
 
