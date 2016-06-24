@@ -24,7 +24,7 @@ static const CGFloat GJDefaultOffsetY = -16;
  */
 - (UIButton *)view;
 
-- (UIView *)nextResponder;
+//- (UIView *)nextResponder;
 
 @end
 
@@ -113,13 +113,13 @@ static const CGFloat GJDefaultOffsetY = -16;
     }
     
     if (customView) {
-        if (self.nextResponder) {
-            [self.nextResponder addSubview:customView];
+        if (self.view.superview) {
+            [self.view.superview addSubview:customView];
         }
     }
-   
+    
     objc_setAssociatedObject(self, @selector(customView), customView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-
+    
     [self _refreshHiddenState];
     [self _refreshDotViewPosition];
 }
@@ -145,10 +145,10 @@ static const CGFloat GJDefaultOffsetY = -16;
 //after set items
 - (void)_updateRedDot {
     if (self.customView && !self.customView.superview) {
-        [self.nextResponder addSubview:self.customView];
+        [self.view.superview addSubview:self.customView];
     }
     if (!self.redDotView.superview) {
-        [self.nextResponder addSubview:self.redDotView];
+        [self.view.superview addSubview:self.redDotView];
     }
     
     [self _refreshHiddenState];
@@ -193,9 +193,13 @@ static const CGFloat GJDefaultOffsetY = -16;
 @implementation UITabBar (GJRedDot)
 
 + (void)load {
-    Method old = class_getInstanceMethod(self, @selector(setItems:animated:));
-    Method new = class_getInstanceMethod(self, @selector(gj_setItems:animated:));
-    method_exchangeImplementations(old, new);
+    Method oldSetItems = class_getInstanceMethod(self, @selector(setItems:animated:));
+    Method newSetItems = class_getInstanceMethod(self, @selector(gj_setItems:animated:));
+    method_exchangeImplementations(oldSetItems, newSetItems);
+    
+    Method oldLayoutSubViews = class_getInstanceMethod(self, @selector(layoutSubviews));
+    Method newLayoutSubViews = class_getInstanceMethod(self, @selector(gj_layoutSubviews));
+    method_exchangeImplementations(oldLayoutSubViews, newLayoutSubViews);
 }
 
 - (void)gj_setItems:(nullable NSArray<UITabBarItem *> *)items animated:(BOOL)animated {
@@ -212,5 +216,13 @@ static const CGFloat GJDefaultOffsetY = -16;
         [item _updateRedDot];
     }
 }
+
+- (void)gj_layoutSubviews {
+    [self gj_layoutSubviews];
+    for (UITabBarItem *item in self.items) {
+        [item _refreshDotViewPosition];
+    }
+}
+
 
 @end
