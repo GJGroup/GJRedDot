@@ -114,7 +114,15 @@
     NSString *show = [__GJUserDefaults stringForKey:key];
     GJRedDotModel *model = [GJRedDotModel new];
     model.key = key;
-    model.show = @(![show isEqualToString:@"hide"]);
+    //userdefault 没有值的时候默认隐藏红点
+    if (show == (id)[NSNull null] || show.length == 0 )
+    {
+        model.show=0;
+    }
+    else
+    {
+        model.show = @(![show isEqualToString:@"hide"]);
+    }
     if (parent && model.parent == nil) {
         model.parent = parent;
         [parent.subDots addObject:model];
