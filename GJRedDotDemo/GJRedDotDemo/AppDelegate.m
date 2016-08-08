@@ -20,9 +20,13 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     [GJRedDot registWithProfile:[GJRedDotRegister registProfiles]];
+    
+    //set tab bar item icon
     UITabBarController *tabVC = (UITabBarController*)self.window.rootViewController;
     UITabBarItem *item2 = tabVC.tabBar.items[1];
     [item2 setImage:[[UIImage imageNamed:@"tabIcon"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    
+    //set tab bar item red dot
     [self setRedDotKey:GJTabBar2 refreshBlock:^(BOOL show) {
         item2.showRedDot = show;
     } handler:self];

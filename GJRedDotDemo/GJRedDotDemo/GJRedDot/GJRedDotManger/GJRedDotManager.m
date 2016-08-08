@@ -13,7 +13,13 @@
 
 #define __GJUserDefaults [NSUserDefaults standardUserDefaults]
 @interface GJRedDotManager ()
+/**
+ *  save refresh block
+ */
 @property (nonatomic, strong) NSMutableDictionary *redDotDic;
+/**
+ *  model for regist
+ */
 @property (nonatomic, strong) NSMutableDictionary *redDotModelDic;
 @property (nonatomic, assign) GJRedDotModelType modelType;
 @property (nonatomic, assign) GJRedDotModelType modelTypeReal;
@@ -92,7 +98,7 @@
     }
 }
 
-//regist
+//regist, fetch by protocol, create by default way
 - (id<GJRedDotModelProtocol>)fetchOrCreateModelWithKey:(NSString *)key
                                                 parent:(id<GJRedDotModelProtocol>)parent {
     //custom
@@ -177,11 +183,10 @@
  *  @return 当前刷新的RedDot model对象
  */
 - (id<GJRedDotModelProtocol>)refreshRedDotForKey:(NSString *)key {
-    GJRedDotInfo *info = [self.redDotDic objectForKey:key];
-    if (!info) return nil;
-    
     id<GJRedDotModelProtocol> model = self.redDotModelDic[key];
     if (!model) return nil;
+
+    GJRedDotInfo *info = [self.redDotDic objectForKey:key];
     
     BOOL show = [self checkShowWithModel:model];
     !info.refreshBlock ?: info.refreshBlock(show);
