@@ -23,7 +23,8 @@ typedef NS_ENUM(NSUInteger, GJRedDotModelType) {
 /**
  *  regist.
  */
-- (void)registWithProfile:(NSArray *)profile;
+- (void)registWithProfile:(NSArray *)profile
+              defaultShow:(BOOL)show;
 
 /**
  *  custom regist.
@@ -36,7 +37,8 @@ typedef NS_ENUM(NSUInteger, GJRedDotModelType) {
  *  regist dynamically one by one 
  */
 - (void)registNodeWithKey:(NSString *)key
-                parentKey:(NSString *)parentKey;
+                parentKey:(NSString *)parentKey
+              defaultShow:(BOOL)show;
 
 /**
  *  add item to manager, it contains red dot action and key.
@@ -52,5 +54,15 @@ typedef NS_ENUM(NSUInteger, GJRedDotModelType) {
  *  reset red dot state.
  */
 - (void)resetRedDotState:(BOOL)show forKey:(NSString *)key;
+
+/**
+ *  show all
+ */
+- (void)resetAllShown;
+
+/**
+ *  hide all
+ */
+- (void)resetAllHidden;
 
 @end

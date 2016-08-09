@@ -8,7 +8,10 @@
 
 #import "GJRedDotView.h"
 
-static CGFloat GJDefaultRedius = 4;
+BOOL hasSetGJDefault;
+
+static CGFloat __GJDefaultRedius = 3;
+static CGFloat GJDefaultRedius = 3;
 static UIColor *GJDefaultColor;
 
 //create cornerRatius red dot
@@ -42,7 +45,36 @@ static UIImage* gj_createCircleImage(UIColor *color,
 @property (nonatomic, weak) NSLayoutConstraint *layoutCenterY;
 @end
 
+static BOOL _initFinished;
+static NSHashTable *_needSetDefaultViews;
+
 @implementation GJRedDotView
+
++ (NSHashTable *)needSetDefaultViews {
+    if (!_needSetDefaultViews) {
+        _needSetDefaultViews = [NSHashTable weakObjectsHashTable];
+    }
+    return _needSetDefaultViews;
+}
+
+//this metho only be called once
++ (void)initFinished {
+    _initFinished = YES;
+    BOOL needSetRedius = GJDefaultRedius != __GJDefaultRedius;
+    BOOL needSetColor  = GJDefaultColor;
+    if (!needSetColor && !needSetRedius) {
+        [[self needSetDefaultViews] removeAllObjects];
+        return;
+    }
+    for (GJRedDotView *view in [self needSetDefaultViews]) {
+        
+        if (needSetRedius) [view setRadius:GJDefaultRedius];
+        
+        if (needSetColor) [view setColor:GJDefaultColor];
+    }
+    
+    [[self needSetDefaultViews] removeAllObjects];
+}
 
 + (void)setDefaultRadius:(CGFloat)radius {
     GJDefaultRedius = radius;
@@ -60,6 +92,9 @@ static UIImage* gj_createCircleImage(UIColor *color,
         self.color = GJDefaultColor ? GJDefaultColor :[UIColor redColor];
         self.offset = CGPointZero;
         self.contentMode = UIViewContentModeCenter;
+        if (!_initFinished) {
+            [[self.class needSetDefaultViews] addObject:self];
+        }
     }
     return self;
 }

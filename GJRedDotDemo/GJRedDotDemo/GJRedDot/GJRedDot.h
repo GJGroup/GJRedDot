@@ -17,8 +17,15 @@
 
 /**
  *  regist your red dot relationship tree from profile,(use NSUserDefault to save data)
+ *  show red dot default.
  */
 + (void)registWithProfile:(NSArray *)profile;
+
+/**
+ *  regist your red dot relationship tree from profile,(use NSUserDefault to save data)
+ *  set show or hide red dot default by 'defaultShow:'.
+ */
++ (void)registWithProfile:(NSArray *)profile defaultShow:(BOOL)show;
 
 /**
  *  regist your red dot relationship tree from profile,
@@ -33,8 +40,20 @@
  *  regist dynamically one by one, after registWithProfile:
  */
 + (void)registNodeWithKey:(NSString *)key
-                parentKey:(NSString *)parentKey;
+                parentKey:(NSString *)parentKey
+              defaultShow:(BOOL)show;
 
+/**
+ *  refresh all node that become show state
+ */
++ (void)resetAllNodesBecomeShown;
+
+/**
+ *  refresh all node that become hide state
+ */
++ (void)resetAllNodesBecomeHidden;
+
+#pragma mark - default setter
 /**
  *  set default radius of red dot.
  */

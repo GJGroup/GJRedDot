@@ -19,8 +19,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    [GJRedDot registWithProfile:[GJRedDotRegister registProfiles]];
-    
+    [GJRedDot registWithProfile:[GJRedDotRegister registProfiles] defaultShow:YES];
+    [GJRedDot setDefaultRadius:4];
+    [GJRedDot setDefaultColor:[UIColor orangeColor]];
     //set tab bar item icon
     UITabBarController *tabVC = (UITabBarController*)self.window.rootViewController;
     UITabBarItem *item2 = tabVC.tabBar.items[1];
