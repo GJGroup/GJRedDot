@@ -18,7 +18,7 @@
 ```objective-c
 @implementation AppDelegate
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [GJRedDot registWithProfile:[GJRedDotRegister registProfiles]];
+    [GJRedDot registWithProfile:[GJRedDotRegister registProfiles] defaultShow:YES];//defaultShow为默认状态是展示还是隐藏
     return YES;
 }
 ```
@@ -75,7 +75,7 @@ NSString *const GJSardKey = @"GJSarkIsGay";
 ##使用
 在需要使用小红点的地方调用如下方法
 ```objective-c
-    //将小红点管理绑定到持有小红点的对象上(handler)，当它release的时候，也自动release小红点的管理
+    //将小红点刷新的callback block绑定到持有小红点的对象上(handler)，当它release的时候，也自动release小红点的刷新block
     //block是小红点刷新的动作，当有其他与当前key相关联的小红点状态发生变化或自身发生变化时，并影响到当前小红点状态，则进行刷新动作
     //这里要使用weakSelf避免循环引用
     __weak typeof(self) weakSelf = self;
@@ -88,6 +88,18 @@ NSString *const GJSardKey = @"GJSarkIsGay";
 ```objective-c
     //改变小红点状态，他会自动在上一个方法中刷新小红点，以及刷新想关联的小红点状态
     [self resetRedDotState:NO forKey:GJGroupKey];
+```
+
+你可以通过2个方法把小红点全部置为隐藏或显示状态：
+```objective-c
+     [GJRedDot resetAllNodesBecomeShown];
+     [GJRedDot resetAllNodesBecomeHidden];
+```
+
+你可以在程序开始时统一设置默认的小红点大小和颜色：
+```objective-c
+     [GJRedDot setDefaultRadius:4];
+     [GJRedDot setDefaultColor:[UIColor orangeColor]];
 ```
 
 ##通过系统原生UITabBarItem添加小红点功能
