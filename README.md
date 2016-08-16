@@ -135,7 +135,7 @@ NSString *const GJSardKey = @"GJSarkIsGay";
     self.taBarItem.customView = ....;
 }
 ```
-<img src="https://github.com/GJGroup/UITabBarItem-GJRedDot/blob/master/demo.gif" width="375">
+<img src="https://github.com/GJGroup/GJRedDot/blob/master/screenshots/demo.gif" width="375">
 
 ##给以UIView为基类的View添加小红点及badge
 当设置badgeValue后，优先显示badgeValue，当badgeValue为nil后，才会根据showRedDot来显示小红点
