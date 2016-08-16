@@ -4,7 +4,9 @@ Pod::Spec.new do |s|
     s.version      = "1.0-alpha"
     s.summary      = "Show red dot, associate and refresh."
     s.description  = <<-DESC
-                        Show red dot, associate and refresh.
+                        U can use GJRedDot to show or hide the red dot on UIView and UITabBarItem.
+                        U can regist red dot's association, and refresh it that it will refreshed through all association nodes.
+                        Red dot will through its asscocation nodes to decide it that show or hide.
                         DESC
     s.homepage     = "https://github.com/GJGroup/GJRedDot"
     s.license      = { :type => "MIT", :file => "LICENSE" }
@@ -14,4 +16,8 @@ Pod::Spec.new do |s|
     s.requires_arc = true
     s.source_files  =  'GJRedDot/*.{h,m}'
     s.frameworks = 'Foundation'
+    s.subspec 'GJDeallocBlockExecutor' do |ss|
+        ss.source_files = 'GJRedDot/GJDeallocBlockExecutor/**/*.{h,m}'
+        ss.public_header_files = 'GJRedDot/GJDeallocBlockExecutor/**/*.{h}'
+    end
 end
