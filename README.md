@@ -8,9 +8,13 @@
 
 
 ##开始
-将GJRedDot文件夹拷贝到工程中，在使用的地方导入头文件
+支持Pod，或手动导入文件夹GJRedDot
 ```bash
-#import "GJRedDot.h"
+    pod 'GJRedDot'
+```
+
+```objective-c
+    #import "GJRedDot.h"
 ```
 
 ##注册
