@@ -61,7 +61,7 @@ static NSHashTable *_needSetDefaultViews;
 + (void)initFinished {
     _initFinished = YES;
     BOOL needSetRedius = GJDefaultRedius != __GJDefaultRedius;
-    BOOL needSetColor  = GJDefaultColor != nil;
+    BOOL needSetColor  = GJDefaultColor ? YES : NO;
     if (!needSetColor && !needSetRedius) {
         [[self needSetDefaultViews] removeAllObjects];
         return;
