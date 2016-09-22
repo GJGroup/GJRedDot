@@ -60,6 +60,7 @@ static NSHashTable *_needSetDefaultViews;
 //this metho only be called once
 + (void)initFinished {
     _initFinished = YES;
+    
     BOOL needSetRedius = GJDefaultRedius != __GJDefaultRedius;
     BOOL needSetColor  = GJDefaultColor ? YES : NO;
     if (!needSetColor && !needSetRedius) {
