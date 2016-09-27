@@ -36,6 +36,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="badge:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g1J-KA-iep">
+                                <rect key="frame" x="59" y="120" width="54" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eoN-Kg-6D5">
+                                <rect key="frame" x="121" y="116" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="textFieldEditingChanged:" destination="f1K-WG-wU6" eventType="editingChanged" id="TMd-xy-ESO"/>
+                                </connections>
+                            </textField>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="4PL-5B-rEV">
+                                <rect key="frame" x="101" y="289" width="118" height="31"/>
+                                <connections>
+                                    <action selector="offsetChangedX:" destination="f1K-WG-wU6" eventType="valueChanged" id="yha-lZ-EHM"/>
+                                </connections>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="x4g-qC-dN2">
+                                <rect key="frame" x="101" y="340" width="118" height="31"/>
+                                <connections>
+                                    <action selector="offsetChangedY:" destination="f1K-WG-wU6" eventType="valueChanged" id="Wyj-SJ-ZrO"/>
+                                </connections>
+                            </slider>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u58-7P-JTg">
                                 <rect key="frame" x="140" y="220" width="40" height="40"/>
                                 <constraints>
@@ -51,38 +77,18 @@
                                     <segue destination="9sM-ao-fec" kind="show" id="IQq-Jf-G6A"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="badge:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g1J-KA-iep">
-                                <rect key="frame" x="59" y="120" width="54" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eoN-Kg-6D5">
-                                <rect key="frame" x="121" y="116" width="97" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="textFieldEditingChanged:" destination="f1K-WG-wU6" eventType="editingChanged" id="TMd-xy-ESO"/>
-                                </connections>
-                            </textField>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="x4g-qC-dN2">
-                                <rect key="frame" x="101" y="340" width="118" height="31"/>
-                                <connections>
-                                    <action selector="offsetChangedY:" destination="f1K-WG-wU6" eventType="valueChanged" id="Wyj-SJ-ZrO"/>
-                                </connections>
-                            </slider>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="4PL-5B-rEV">
-                                <rect key="frame" x="101" y="289" width="118" height="31"/>
-                                <connections>
-                                    <action selector="offsetChangedX:" destination="f1K-WG-wU6" eventType="valueChanged" id="yha-lZ-EHM"/>
-                                </connections>
-                            </slider>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="u58-7P-JTg" firstAttribute="centerX" secondItem="kas-NI-K5D" secondAttribute="centerX" id="af6-M2-Hw5"/>
                             <constraint firstItem="u58-7P-JTg" firstAttribute="centerY" secondItem="kas-NI-K5D" secondAttribute="centerY" id="x0L-Nj-qm1"/>
+                            <constraint firstItem="u58-7P-JTg" firstAttribute="top" secondItem="BAc-d8-mlf" secondAttribute="bottom" constant="156" id="yOc-qi-WgM"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="x0L-Nj-qm1"/>
+                            </mask>
+                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 2" id="ZRi-gs-CCb"/>
                     <navigationItem key="navigationItem" id="lge-dn-Ddc"/>
