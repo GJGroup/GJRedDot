@@ -175,6 +175,11 @@ static NSHashTable *_needSetDefaultViews;
     self.badgeLabel.text = _badgeValue;
 }
 
+- (void)setOffset:(CGPoint)offset {
+    if (CGPointEqualToPoint(offset, _offset)) return;
+    _offset = offset;
+}
+
 - (UILabel *)badgeLabel {
     if (!_badgeLabel) {
         _badgeLabel = [UILabel new];

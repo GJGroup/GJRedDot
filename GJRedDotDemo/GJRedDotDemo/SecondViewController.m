@@ -36,15 +36,16 @@
 }
 
 - (IBAction)offsetChangedX:(UISlider *)slider {
-    CGPoint offset = self.gjGroupButton.redDotOffset;
+    CGPoint offset = self.gjGroupButton.badgeOffset;
     offset.x = slider.value;
-    self.gjGroupButton.redDotOffset = offset;
+    self.gjGroupButton.badgeOffset = offset;
 }
 
 - (IBAction)offsetChangedY:(UISlider *)slider {
-    CGPoint offset = self.gjGroupButton.redDotOffset;
+    CGPoint offset = self.gjGroupButton.badgeOffset;
     offset.y = slider.value;
-    self.gjGroupButton.redDotOffset = offset;}
+    self.gjGroupButton.badgeOffset = offset;
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

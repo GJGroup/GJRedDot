@@ -75,10 +75,6 @@
 
 - (void)setRedDotOffset:(CGPoint)redDotOffset {
     self.redDotView.offset = redDotOffset;
-    GJBadgeView *badgeView = objc_getAssociatedObject(self, @selector(badgeView));
-    if (badgeView) {
-        [self _refreshBadgeLayout];
-    }
 }
 
 //radius
@@ -128,6 +124,15 @@
     [self _refreshHiddenState];
 }
 
+- (CGPoint)badgeOffset {
+    return self.badgeView.offset;
+}
+
+- (void)setBadgeOffset:(CGPoint)badgeOffset {
+    self.badgeView.offset = badgeOffset;
+    [self _refreshBadgeLayout];
+}
+
 //pravite
 - (void)_refreshHiddenState {
     self.redDotView.hidden = (!self.showRedDot || self.badgeValue);
@@ -172,8 +177,8 @@
 
 - (void)_layoutBadgeView:(GJBadgeView *)bageview {
     bageview.translatesAutoresizingMaskIntoConstraints = NO;
-    CGFloat x = -8 + self.redDotOffset.x;
-    CGFloat y = 8 + self.redDotOffset.y;
+    CGFloat x = -8 + self.badgeOffset.x;
+    CGFloat y = 8 + self.badgeOffset.y;
     NSLayoutConstraint *layoutX = [NSLayoutConstraint constraintWithItem:bageview
                                                                attribute:NSLayoutAttributeLeft
                                                                relatedBy:NSLayoutRelationEqual
@@ -195,8 +200,8 @@
 }
 
 - (void)_refreshBadgeLayout {
-    CGFloat x = - 8 + self.redDotOffset.x;
-    CGFloat y = 8 + self.redDotOffset.y;
+    CGFloat x = - 8 + self.badgeOffset.x;
+    CGFloat y = 8 + self.badgeOffset.y;
     self.badgeView.layoutCenterX.constant = x;
     self.badgeView.layoutCenterY.constant = y;
 }

@@ -46,4 +46,9 @@
  */
 @property (nonatomic, copy) NSString *badgeValue;
 
+/**
+ *  显示badge时的offset
+ */
+@property (nonatomic, assign) CGPoint badgeOffset;
+
 @end

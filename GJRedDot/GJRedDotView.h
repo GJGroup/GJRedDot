@@ -33,4 +33,6 @@
 
 @property (nonatomic, copy) NSString *badgeValue;
 
+@property (nonatomic, assign) CGPoint offset;
+
 @end
