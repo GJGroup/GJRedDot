@@ -35,6 +35,17 @@
     self.gjGroupButton.badgeValue = sender.text.length ? sender.text : nil;
 }
 
+- (IBAction)offsetChangedX:(UISlider *)slider {
+    CGPoint offset = self.gjGroupButton.redDotOffset;
+    offset.x = slider.value;
+    self.gjGroupButton.redDotOffset = offset;
+}
+
+- (IBAction)offsetChangedY:(UISlider *)slider {
+    CGPoint offset = self.gjGroupButton.redDotOffset;
+    offset.y = slider.value;
+    self.gjGroupButton.redDotOffset = offset;}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

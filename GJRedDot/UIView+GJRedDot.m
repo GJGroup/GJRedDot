@@ -16,6 +16,10 @@
 @property (nonatomic, weak) NSLayoutConstraint *layoutCenterY;
 @end
 
+@interface GJBadgeView ()
+@property (nonatomic, weak) NSLayoutConstraint *layoutCenterX;
+@property (nonatomic, weak) NSLayoutConstraint *layoutCenterY;
+@end
 
 @interface UIView ()
 @property (nonatomic, strong) GJRedDotView *redDotView;
@@ -71,6 +75,10 @@
 
 - (void)setRedDotOffset:(CGPoint)redDotOffset {
     self.redDotView.offset = redDotOffset;
+    GJBadgeView *badgeView = objc_getAssociatedObject(self, @selector(badgeView));
+    if (badgeView) {
+        [self _refreshBadgeLayout];
+    }
 }
 
 //radius
@@ -151,7 +159,7 @@
 
 }
 
-- (void)_refreshLayout {
+- (void)_refreshRedDotLayout {
     CGFloat x = - self.redDotView.radius + self.redDotOffset.x;
     CGFloat y = self.redDotView.radius + self.redDotOffset.y;
     self.redDotView.layoutCenterX.constant = x;
@@ -159,27 +167,38 @@
 }
 
 - (void)refreshRedDotView:(GJRedDotView *)view {
-    [self _refreshLayout];
+    [self _refreshRedDotLayout];
 }
 
 - (void)_layoutBadgeView:(GJBadgeView *)bageview {
     bageview.translatesAutoresizingMaskIntoConstraints = NO;
+    CGFloat x = -8 + self.redDotOffset.x;
+    CGFloat y = 8 + self.redDotOffset.y;
     NSLayoutConstraint *layoutX = [NSLayoutConstraint constraintWithItem:bageview
                                                                attribute:NSLayoutAttributeLeft
                                                                relatedBy:NSLayoutRelationEqual
                                                                   toItem:self
                                                                attribute:NSLayoutAttributeRight
                                                               multiplier:1
-                                                                constant:-8];
+                                                                constant:x];
     NSLayoutConstraint *layoutY = [NSLayoutConstraint constraintWithItem:bageview
                                                                attribute:NSLayoutAttributeBottom
                                                                relatedBy:NSLayoutRelationEqual
                                                                   toItem:self
                                                                attribute:NSLayoutAttributeTop
                                                               multiplier:1
-                                                                constant:8];
+                                                                constant:y];
     [self addConstraint:layoutX];
     [self addConstraint:layoutY];
+    bageview.layoutCenterX = layoutX;
+    bageview.layoutCenterY = layoutY;
+}
+
+- (void)_refreshBadgeLayout {
+    CGFloat x = - 8 + self.redDotOffset.x;
+    CGFloat y = 8 + self.redDotOffset.y;
+    self.badgeView.layoutCenterX.constant = x;
+    self.badgeView.layoutCenterY.constant = y;
 }
 
 @end

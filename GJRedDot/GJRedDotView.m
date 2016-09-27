@@ -57,7 +57,7 @@ static NSHashTable *_needSetDefaultViews;
     return _needSetDefaultViews;
 }
 
-//this metho only be called once
+//this method only be called once
 + (void)initFinished {
     _initFinished = YES;
     
@@ -150,6 +150,8 @@ static NSHashTable *_needSetDefaultViews;
 @interface GJBadgeView ()
 
 @property (nonatomic, strong) UILabel *badgeLabel;
+@property (nonatomic, weak) NSLayoutConstraint *layoutCenterX;
+@property (nonatomic, weak) NSLayoutConstraint *layoutCenterY;
 
 @end
 
