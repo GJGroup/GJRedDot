@@ -35,4 +35,6 @@
 
 @property (nonatomic, assign) CGPoint offset;
 
+@property (nonatomic, strong) UIColor *color;
+
 @end

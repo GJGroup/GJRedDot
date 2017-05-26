@@ -133,6 +133,14 @@
     [self _refreshBadgeLayout];
 }
 
+- (UIColor *)badgeColor {
+    return self.badgeView.color;
+}
+
+- (void)setBadgeColor:(UIColor *)badgeColor {
+    self.badgeView.color = badgeColor;
+}
+
 //pravite
 - (void)_refreshHiddenState {
     self.redDotView.hidden = (!self.showRedDot || self.badgeValue);

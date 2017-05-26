@@ -31,6 +31,29 @@
 
 }
 
+- (IBAction)clickChangeColor:(id)sender {
+    NSInteger index = arc4random() % 4;
+    UIColor *color = [UIColor redColor];
+    switch (index) {
+        case 0:
+            color = [UIColor redColor];
+            break;
+        case 1:
+            color = [UIColor grayColor];
+            break;
+        case 2:
+            color = [UIColor greenColor];
+            break;
+        case 3:
+            color = [UIColor blueColor];
+            break;
+        default:
+            break;
+    }
+    
+    self.gjGroupButton.badgeColor = color;
+}
+
 - (IBAction)textFieldEditingChanged:(UITextField *)sender {
     self.gjGroupButton.badgeValue = sender.text.length ? sender.text : nil;
 }

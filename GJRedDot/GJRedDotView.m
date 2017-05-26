@@ -168,6 +168,11 @@ static NSHashTable *_needSetDefaultViews;
     return self;
 }
 
+- (void)setColor:(UIColor *)color {
+    _color = color;
+    self.image = [gj_createCircleImage(_color, 8, 0, nil) resizableImageWithCapInsets:UIEdgeInsetsMake(0, 8, 0, 8)];
+}
+
 - (void)setBadgeValue:(NSString *)badgeValue {
     if ([_badgeValue isEqualToString:badgeValue]) return;
     _badgeValue = [badgeValue copy];

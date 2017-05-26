@@ -51,4 +51,9 @@
  */
 @property (nonatomic, assign) CGPoint badgeOffset;
 
+/**
+ *  badge时的color
+ */
+@property (nonatomic, strong) UIColor *badgeColor;
+
 @end
