@@ -46,5 +46,8 @@
     [[GJRedDotManager sharedManager] resetRedDotState:show forKey:key];
 }
 
+- (void)refreshRedDotTreeForKey:(NSString *)key {
+    [[GJRedDotManager sharedManager] refreshRedDotTreeForKey:key];
+}
 
 @end

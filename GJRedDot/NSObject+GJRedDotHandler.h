@@ -43,4 +43,9 @@
 - (void)resetRedDotState:(BOOL)show
                   forKey:(NSString *)key;
 
+/**
+ * refresh red dot form current key.
+ */
+- (void)refreshRedDotTreeForKey:(NSString *)key;
+
 @end
