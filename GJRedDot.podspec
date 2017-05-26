@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
     s.name         = "GJRedDot"
-    s.version      = "1.2"
+    s.version      = "1.3"
     s.summary      = "Show red dot, associate and refresh."
     s.description  = <<-DESC
                         U can use GJRedDot to show or hide the red dot on UIView and UITabBarItem.
@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
     s.license      = { :type => "MIT", :file => "LICENSE" }
     s.author       = { "wangyutao" => "https://github.com/wangyutao0424" }
     s.platform     = :ios ,"7.0"
-    s.source       = { :git => "https://github.com/GJGroup/GJRedDot.git", :branch => "master", :tag => '1.2' }
+    s.source       = { :git => "https://github.com/GJGroup/GJRedDot.git", :branch => "master", :tag => '1.3' }
     s.requires_arc = true
     s.source_files  =  'GJRedDot/*.{h,m}'
     s.frameworks = 'Foundation'

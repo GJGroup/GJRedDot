@@ -65,4 +65,8 @@ typedef NS_ENUM(NSUInteger, GJRedDotModelType) {
  */
 - (void)resetAllHidden;
 
+/**
+ * refresh red dot form current key.
+ */
+- (void)refreshRedDotTreeForKey:(NSString *)key;
 @end
